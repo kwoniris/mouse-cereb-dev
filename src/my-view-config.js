@@ -46,6 +46,9 @@ export const myViewConfig = {
                     }
                     // can add more from the obs variable in anndata if needed
                 ],
+                featureLabels: {
+                    path: "var/_index"
+                },
                 featureSelection: {
                     path: "var/highly_variable"
                 }
