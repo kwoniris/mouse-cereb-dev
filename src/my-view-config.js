@@ -42,7 +42,7 @@ export const myViewConfig = {
                         name: "Leiden Clusters", path: "obs/leiden" 
                     },
                     {
-                        name: "AP Slice", path: "obs/library_id" // from 1 to 4 being A-P 
+                        name: "Coronal Slice", path: "obs/coronal_slice_id" // from 1 to 4 being A-P 
                     }
                     // can add more from the obs variable in anndata if needed
                 ],

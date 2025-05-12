@@ -2,7 +2,7 @@
     "_index": "_index",
     "column-order": [
         "cell_number",
-        "Coronal Slice ID",
+        "coronal_slice_id",
         "timepoint",
         "batch",
         "n_genes_by_counts",
