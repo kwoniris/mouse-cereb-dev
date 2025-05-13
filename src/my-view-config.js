@@ -9,7 +9,7 @@ export const myViewConfig = {
       "files": [
         {
           "fileType": "anndata.zarr",
-          "url": "data/A/0/05e52b6c-3dd7-46f4-a6b5-7bda19bfbaa6.adata.zarr",
+          "url": "data/E11_Normalized",
           "options": {
             "obsLocations": {
               "path": "obsm/spatial"
