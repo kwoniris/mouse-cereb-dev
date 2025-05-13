@@ -7,11 +7,7 @@
         "total_counts",
         "n_cells",
         "mean",
-        "std",
-        "highly_variable",
-        "means",
-        "dispersions",
-        "dispersions_norm"
+        "std"
     ],
     "encoding-type": "dataframe",
     "encoding-version": "0.2.0"
