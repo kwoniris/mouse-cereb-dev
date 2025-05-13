@@ -1,138 +1,145 @@
-export const myViewConfig = {
-    version: "1.0.16",
-    name: "Embryonic Mouse Cerebellum STARmap",
-    description: "Spatial transcriptomics map of the embryonic mouse cerebellum. SPARTseq data from E11 timepoint.",
-    datasets: [
-      {
-        uid: "A",
-        name: "Zarr-converted AnnData File", // config using only the singular Zarr format
-        files: [
-          {
-            fileType: "anndata.zarr", 
-            url: "data/E11_Normalized.zarr", // using the normalized data for spatial coords 
-            coordinationValues: {
-                dataset: "A", 
-                obsType: "obs", 
-                featureType: "gene", 
-                featureValueType: "expression",
-                embeddingType: "UMAP"
+const myViewConfig = {
+  "version": "1.0.15",
+  "name": "E11 STARmap slice 1",
+  "description": "",
+  "datasets": [
+    {
+      "uid": "A",
+      "name": "E11",
+      "files": [
+        {
+          "fileType": "anndata.zarr",
+          "url": "public/data//A/0/815a9617-ab94-4ff0-a6b4-6d1e5ad28e33.adata.zarr",
+          "options": {
+            "obsLocations": {
+              "path": "obsm/spatial"
             },
-            options: {
-                obsFeatureMatrix: {
-                    path: "X", 
-                },
-                obsEmbedding: [
-                    {
-                        path: "obsm/X_umap",
-                        embeddingType: "UMAP"
-                    }
-                    // can add pca as well after this 
+            "obsEmbedding": [
+              {
+                "path": "obsm/X_umap",
+                "dims": [
+                  0,
+                  1
                 ],
-                obsLocations: {
-                    path: "obsm/spatial", 
-                },
-                obsSets: [
-                    {
-                        name: "Cell Type", path: "obs/cell_types" 
-                    },
-                    {
-                        name: "Finer Cell Types", path: "obs/finer_cell_types" 
-                    },
-                    {
-                        name: "Leiden Clusters", path: "obs/leiden" 
-                    },
-                    {
-                        name: "Coronal Slice", path: "obs/coronal_slice_id" // from 1 to 4 being A-P 
-                    }
-                    // can add more from the obs variable in anndata if needed
-                ],
-                featureLabels: {
-                    path: "var/_index"
-                },
-                featureSelection: {
-                    path: "var/highly_variable"
-                }
+                "embeddingType": "UMAP"
+              }
+            ],
+            "obsSets": [
+              {
+                "name": "Cell Type",
+                "path": "obs/cell_types"
+              },
+              {
+                "name": "Coronal Slice A-P",
+                "path": "obs/library_id"
+              },
+              {
+                "name": "Leiden Clusters",
+                "path": "obs/leiden"
+              }
+            ],
+            "obsFeatureMatrix": {
+              "path": "X"
             }
           }
-        ]
+        }
+      ]
+    }
+  ],
+  "coordinationSpace": {
+    "dataset": {
+      "A": "A"
+    },
+    "embeddingType": {
+      "A": "UMAP"
+    },
+    "spatialZoom": {
+      "A": 1.5
+    },
+    "spatialTargetX": {
+      "A": 259
+    },
+    "spatialTargetY": {
+      "A": 500
+    },
+    "spatialSegmentationLayer": {
+      "A": {
+        "opacity": 1,
+        "radius": 2,
+        "visible": true,
+        "stroked": false
       }
-    ],
-    coordinationSpace: {
-      dataset: {
-        A: "A"
+    }
+  },
+  "layout": [
+    {
+      "component": "description",
+      "coordinationScopes": {
+        "dataset": "A"
       },
-      obsType: {
-        A: "obs"
-      },
-      featureType: {
-        A: "gene"
-      },
-      featureValueType: {
-        A: "expression"
-      },
-      embeddingType: {
-        A: "UMAP"
-      },
-      featureSelection: {
-        A: null
+      "x": 0.0,
+      "y": 0.0,
+      "w": 3.0,
+      "h": 3.0,
+      "props": {
+        "description": "My E11 STARmap data."
       }
     },
-    layout: [
-      {
-        component: "spatial", 
-        coordinationScopes: {
-            dataset: "A",
-            obsType: "A", 
-            featureType: "A", 
-            featureValueType: "A",
-            featureSelection: "A"
-        },
-        x: 0, y: 0, w: 6, h:6, 
-        props: {
-            description: "Embryonic Mouse Cerebellum STARmap"
-        }
+    {
+      "component": "spatial",
+      "coordinationScopes": {
+        "dataset": "A",
+        "spatialZoom": "A",
+        "spatialTargetX": "A",
+        "spatialTargetY": "A",
+        "spatialSegmentationLayer": "A"
       },
-      {
-        component: "scatterplot",
-        coordinationScopes: {
-            dataset: "A",
-            obsType: "A", 
-            embeddingType: "A", 
-            featureType: "A", 
-            featureValueType: "A", 
-            featureSelection: "A"
-        },
-        x:6, y:0, w:6, h:6
-      }, 
-      {
-        component: "obsSets", 
-        coordinationScopes: {
-            dataset: "A",
-            obsType: "A"
-        },
-        x:0, y:6, w:3, h:6
+      "x": 3.0,
+      "y": 0,
+      "w": 3.0,
+      "h": 12
+    },
+    {
+      "component": "scatterplot",
+      "coordinationScopes": {
+        "embeddingType": "A"
       },
-      {
-        component: "featureList", 
-        coordinationScopes: {
-            dataset: "A",
-            featureType: "A", 
-            featureSelection: "A"
-        },
-        x:3, y:6, w:3, h:6
-      }, 
-      {
-        component: "heatmap", 
-        coordinationScopes: {
-            dataset: "A",
-            featureType: "A", 
-            featureValueType: "A", 
-            featureSelection: "A"
-        },
-        x:6, y:6, w:6, h:6,
-        props: {
-            transpose:true}
-        }
-    ],
-    initStrategy: "auto"
-  };
+      "x": 6.0,
+      "y": 0,
+      "w": 3.0,
+      "h": 12,
+      "coordinationScopesBy": {}
+    },
+    {
+      "component": "featureList",
+      "coordinationScopes": {
+        "dataset": "A"
+      },
+      "x": 0.0,
+      "y": 6.0,
+      "w": 3.0,
+      "h": 6.0
+    },
+    {
+      "component": "obsSets",
+      "coordinationScopes": {
+        "dataset": "A"
+      },
+      "x": 0.0,
+      "y": 3.0,
+      "w": 3.0,
+      "h": 3.0
+    },
+    {
+      "component": "heatmap",
+      "coordinationScopes": {
+        "dataset": "A"
+      },
+      "x": 9.0,
+      "y": 0,
+      "w": 3.0,
+      "h": 12
+    }
+  ],
+  "initStrategy": "auto"
+};
