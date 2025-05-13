@@ -11,7 +11,7 @@ export const myViewConfig = {
       files: [
         {
           fileType: "anndata.zarr",
-          url: "public/data/E11_Normalized.zarr",
+          url: "data/E11_Normalized.zarr",
           options: {
             obsLocations: {
               path: "obsm/spatial"
