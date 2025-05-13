@@ -1,6 +1,6 @@
 export const myViewConfig = {
   "version": "1.0.15",
-  "name": "E11 STARmap slice 1",
+  "name": "E11 STARmap",
   "description": "",
   "datasets": [
     {
@@ -9,7 +9,7 @@ export const myViewConfig = {
       "files": [
         {
           "fileType": "anndata.zarr",
-          "url": "data//A/0/815a9617-ab94-4ff0-a6b4-6d1e5ad28e33.adata.zarr",
+          "url": "data/A/0/05e52b6c-3dd7-46f4-a6b5-7bda19bfbaa6.adata.zarr",
           "options": {
             "obsLocations": {
               "path": "obsm/spatial"
@@ -107,8 +107,7 @@ export const myViewConfig = {
       "x": 6.0,
       "y": 0,
       "w": 3.0,
-      "h": 12,
-      "coordinationScopesBy": {}
+      "h": 12
     },
     {
       "component": "featureList",
