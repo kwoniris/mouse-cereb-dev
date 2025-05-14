@@ -9,7 +9,7 @@ export const myViewConfig = {
       "files": [
         {
           "fileType": "anndata.zarr",
-          "url": "data//A/0/54355cef-e312-4ce9-90cd-1fbcb9bf110c.adata.zarr",
+          "url": "data/E11_Normalized.zarr",
           "options": {
             "obsLocations": {
               "path": "obsm/spatial"
@@ -82,7 +82,7 @@ export const myViewConfig = {
       "w": 3.0,
       "h": 3.0,
       "props": {
-        "description": "My E11 STARmap data."
+        "description": "Developing Mouse Cerebellum E11 Data"
       }
     },
     {
