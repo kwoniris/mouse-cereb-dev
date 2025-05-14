@@ -10,7 +10,7 @@ export const myViewConfig = {
         {
           "fileType": "anndata.zarr",
           // "url": "data//A/0/f6f5e20e-37c2-484d-8ce7-b68fad8a537b.adata.zarr",
-          "url":"https://github.com/kwoniris/mouse-cereb-dev/tree/8b4437c8e0f309b031a3275f00a07bd9cf9d609d/public/data/E11_Normalized.zarr",
+          "url":"https://kwoniris.github.io/mouse-cereb-dev/data/E11_Normalized.zarr",
           "options": {
             "obsLocations": {
               "path": "obsm/spatial"
