@@ -9,8 +9,7 @@ export const myViewConfig = {
       "files": [
         {
           "fileType": "anndata.zarr",
-          // "url": "data/E11_Normalized.zarr",
-          "url":"data/A/0/b5e17277-98a0-4752-a7e7-729825b2b3c4.adata.zarr",
+          "url": "data//A/0/54355cef-e312-4ce9-90cd-1fbcb9bf110c.adata.zarr",
           "options": {
             "obsLocations": {
               "path": "obsm/spatial"
@@ -108,7 +107,8 @@ export const myViewConfig = {
       "x": 6.0,
       "y": 0,
       "w": 3.0,
-      "h": 12
+      "h": 12,
+      "coordinationScopesBy": {}
     },
     {
       "component": "featureList",
