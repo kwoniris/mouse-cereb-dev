@@ -88,8 +88,8 @@ export const myViewConfig = {
   ],
   "coordinationSpace": {
     "dataset": {
-      "A": "A",
-      "B":"B"
+      "shared": "A"
+      // "B":"B"
     },
     "embeddingType": {
       "A": "UMAP",
@@ -123,28 +123,42 @@ export const myViewConfig = {
     }
   },
   "layout": [
-    // E11 Views 
+    // shared views 
     {
       "component": "description",
       "coordinationScopes": {
-        "dataset": "A"
+        "dataset": "shared"
       },
       "x": 0.0,
       "y": 0.0,
       "w": 3.0,
       "h": 3.0,
       "props": {
-        "description": "My E11 STARmap data."
+        "description": "My STARmap data."
       }
     },
     {
       "component": "spatial",
       "coordinationScopes": {
-        "dataset": "A",
-        "spatialZoom": "A",
-        "spatialTargetX": "A",
-        "spatialTargetY": "A",
-        "spatialSegmentationLayer": "A"
+        "dataset": "shared"
+      },
+      "coordinationScopesBy": {
+        "spatialZoom": {
+          "A": "A", 
+          "B": "B"
+        },
+        "spatialTargetX": {
+          "A": "A",
+          "B":"B"
+        },
+        "spatialTargetY": {
+          "A": "A",
+          "B":"B"
+        },
+        "spatialSegmentationLayer": {
+          "A": "A",
+          "B":"B"
+        }
       },
       "x": 3.0,
       "y": 0,
@@ -154,18 +168,23 @@ export const myViewConfig = {
     {
       "component": "scatterplot",
       "coordinationScopes": {
-        "embeddingType": "A"
+        "dataset": "shared"
+      },
+      "coordinationScopesBy": {
+        "embeddingType": {
+          "A": "A",
+          "B": "B"
+        }
       },
       "x": 6.0,
       "y": 0,
       "w": 3.0,
-      "h": 12,
-      "coordinationScopesBy": {}
+      "h": 12
     },
     {
       "component": "featureList",
       "coordinationScopes": {
-        "dataset": "A"
+        "dataset": "shared"
       },
       "x": 0.0,
       "y": 6.0,
@@ -175,7 +194,7 @@ export const myViewConfig = {
     {
       "component": "obsSets",
       "coordinationScopes": {
-        "dataset": "A"
+        "dataset": "shared"
       },
       "x": 0.0,
       "y": 3.0,
@@ -185,82 +204,151 @@ export const myViewConfig = {
     {
       "component": "heatmap",
       "coordinationScopes": {
-        "dataset": "A"
+        "dataset": "shared"
       },
       "x": 9.0,
       "y": 0,
       "w": 3.0,
       "h": 12
     },
-    // E13 Views
-    {
-      "component": "description",
-      "coordinationScopes": {
-        "dataset": "B"
-      },
-      "x": 0.0,
-      "y": 12.0,
-      "w": 3.0,
-      "h": 3.0,
-      "props": {
-        "description": "My E13 STARmap data."
-      }
-    },
-    {
-      "component": "spatial",
-      "coordinationScopes": {
-        "dataset": "B",
-        "spatialZoom": "B",
-        "spatialTargetX": "B",
-        "spatialTargetY": "B",
-        "spatialSegmentationLayer": "B"
-      },
-      "x": 3.0,
-      "y": 12.0,
-      "w": 3.0,
-      "h": 12
-    },
-    {
-      "component": "scatterplot",
-      "coordinationScopes": {
-        "embeddingType": "B"
-      },
-      "x": 6.0,
-      "y": 12.0,
-      "w": 3.0,
-      "h": 12,
-      "coordinationScopesBy": {}
-    },
-    {
-      "component": "featureList",
-      "coordinationScopes": {
-        "dataset": "B"
-      },
-      "x": 0.0,
-      "y": 18.0,
-      "w": 3.0,
-      "h": 6.0
-    },
-    {
-      "component": "obsSets",
-      "coordinationScopes": {
-        "dataset": "B"
-      },
-      "x": 0.0,
-      "y": 15.0,
-      "w": 3.0,
-      "h": 3.0
-    },
-    {
-      "component": "heatmap",
-      "coordinationScopes": {
-        "dataset": "B"
-      },
-      "x": 9.0,
-      "y": 12.0,
-      "w": 3.0,
-      "h": 3.0
-    }
+    // // E11 Views 
+    // {
+    //   "component": "description",
+    //   "coordinationScopes": {
+    //     "dataset": "A"
+    //   },
+    //   "x": 0.0,
+    //   "y": 0.0,
+    //   "w": 3.0,
+    //   "h": 3.0,
+    //   "props": {
+    //     "description": "My E11 STARmap data."
+    //   }
+    // },
+    // {
+    //   "component": "spatial",
+    //   "coordinationScopes": {
+    //     "dataset": "A",
+    //     "spatialZoom": "A",
+    //     "spatialTargetX": "A",
+    //     "spatialTargetY": "A",
+    //     "spatialSegmentationLayer": "A"
+    //   },
+    //   "x": 3.0,
+    //   "y": 0,
+    //   "w": 3.0,
+    //   "h": 12
+    // },
+    // {
+    //   "component": "scatterplot",
+    //   "coordinationScopes": {
+    //     "embeddingType": "A"
+    //   },
+    //   "x": 6.0,
+    //   "y": 0,
+    //   "w": 3.0,
+    //   "h": 12,
+    //   "coordinationScopesBy": {}
+    // },
+    // {
+    //   "component": "featureList",
+    //   "coordinationScopes": {
+    //     "dataset": "A"
+    //   },
+    //   "x": 0.0,
+    //   "y": 6.0,
+    //   "w": 3.0,
+    //   "h": 6.0
+    // },
+    // {
+    //   "component": "obsSets",
+    //   "coordinationScopes": {
+    //     "dataset": "A"
+    //   },
+    //   "x": 0.0,
+    //   "y": 3.0,
+    //   "w": 3.0,
+    //   "h": 3.0
+    // },
+    // {
+    //   "component": "heatmap",
+    //   "coordinationScopes": {
+    //     "dataset": "A"
+    //   },
+    //   "x": 9.0,
+    //   "y": 0,
+    //   "w": 3.0,
+    //   "h": 12
+    // },
+    // // E13 Views
+    // {
+    //   "component": "description",
+    //   "coordinationScopes": {
+    //     "dataset": "B"
+    //   },
+    //   "x": 0.0,
+    //   "y": 12.0,
+    //   "w": 3.0,
+    //   "h": 3.0,
+    //   "props": {
+    //     "description": "My E13 STARmap data."
+    //   }
+    // },
+    // {
+    //   "component": "spatial",
+    //   "coordinationScopes": {
+    //     "dataset": "B",
+    //     "spatialZoom": "B",
+    //     "spatialTargetX": "B",
+    //     "spatialTargetY": "B",
+    //     "spatialSegmentationLayer": "B"
+    //   },
+    //   "x": 3.0,
+    //   "y": 12.0,
+    //   "w": 3.0,
+    //   "h": 12
+    // },
+    // {
+    //   "component": "scatterplot",
+    //   "coordinationScopes": {
+    //     "embeddingType": "B"
+    //   },
+    //   "x": 6.0,
+    //   "y": 12.0,
+    //   "w": 3.0,
+    //   "h": 12,
+    //   "coordinationScopesBy": {}
+    // },
+    // {
+    //   "component": "featureList",
+    //   "coordinationScopes": {
+    //     "dataset": "B"
+    //   },
+    //   "x": 0.0,
+    //   "y": 18.0,
+    //   "w": 3.0,
+    //   "h": 6.0
+    // },
+    // {
+    //   "component": "obsSets",
+    //   "coordinationScopes": {
+    //     "dataset": "B"
+    //   },
+    //   "x": 0.0,
+    //   "y": 15.0,
+    //   "w": 3.0,
+    //   "h": 3.0
+    // },
+    // {
+    //   "component": "heatmap",
+    //   "coordinationScopes": {
+    //     "dataset": "B"
+    //   },
+    //   "x": 9.0,
+    //   "y": 12.0,
+    //   "w": 3.0,
+    //   "h": 3.0
+    // }
   ],
   "initStrategy": "auto"
 };
