@@ -285,7 +285,7 @@ export const myViewConfig = {
       "coordinationScopes": {
         "dataset": "shared"
       },
-      "coordinationScopes": {
+      "coordinationScopesBy": {
         "embeddingType": {
           "A": "A",
           "B": "B"
