@@ -238,12 +238,9 @@ export const myViewConfig = {
     }
   },
   "layout": [
-    // Shared views 
-    {
+     // Shared views Add commentMore actions
+     {
       "component": "description", 
-      "coordinationScopes": {
-        "dataset": "shared"
-      },
       "x": 0.0,
       "y": 0.0,
       "w": 3.0,
@@ -252,44 +249,25 @@ export const myViewConfig = {
         "description": "Spatial transcriptomics map of the developing mouse cerebellum. Coronal section from SPART-seq data, E11-E17 timepoints, four anterior to posterior slices taken per timepoint."
       }
     },
+    // E11 Views 
     {
       "component": "spatial",
       "coordinationScopes": {
-        "dataset": "shared"
-      },
-      "coordinationScopesBy":{
-        "spatialZoom": {
-          "A": "A", 
-          "B": "B"
-        },
-        "spatialTargetX": {
-          "A": "A",
-          "B":"B"
-        },
-        "spatialTargetY": {
-          "A": "A",
-          "B":"B"
-        },
-        "spatialSegmentationLayer": {
-          "A": "A",
-          "B":"B"
-        }
+        "dataset": "A",
+        "spatialZoom": "A",
+        "spatialTargetX": "A",
+        "spatialTargetY": "A",
+        "spatialSegmentationLayer": "A"
       },
       "x": 3.0,
-      "y": 0.0,
+      "y": 0,
       "w": 3.0,
       "h": 12
     },
     {
       "component": "scatterplot",
       "coordinationScopes": {
-        "dataset": "shared"
-      },
-      "coordinationScopesBy": {
-        "embeddingType": {
-          "A": "A",
-          "B": "B"
-        }
+        "embeddingType": "A"
       },
       "x": 6.0,
       "y": 0,
@@ -299,7 +277,7 @@ export const myViewConfig = {
     {
       "component": "featureList",
       "coordinationScopes": {
-        "dataset": "shared"
+        "dataset": "A"
       },
       "x": 0.0,
       "y": 6.0,
@@ -309,7 +287,7 @@ export const myViewConfig = {
     {
       "component": "obsSets",
       "coordinationScopes": {
-        "dataset": "shared"
+        "dataset": "A"
       },
       "x": 0.0,
       "y": 3.0,
@@ -319,12 +297,69 @@ export const myViewConfig = {
     {
       "component": "heatmap",
       "coordinationScopes": {
-        "dataset": "shared"
+        "dataset": "A"
       },
       "x": 9.0,
       "y": 0,
       "w": 3.0,
       "h": 12
+    },
+    // E13 Views
+    {
+      "component": "spatial",
+      "coordinationScopes": {
+        "dataset": "B",
+        "spatialZoom": "B",
+        "spatialTargetX": "B",
+        "spatialTargetY": "B",
+        "spatialSegmentationLayer": "B"
+      },
+      "x": 3.0,
+      "y": 12.0,
+      "w": 3.0,
+      "h": 12
+    },
+    {
+      "component": "scatterplot",
+      "coordinationScopes": {
+        "embeddingType": "B"
+      },
+      "x": 6.0,
+      "y": 12.0,
+      "w": 3.0,
+      "h": 12,
+      "coordinationScopesBy": {}
+    },
+    {
+      "component": "featureList",
+      "coordinationScopes": {
+        "dataset": "B"
+      },
+      "x": 0.0,
+      "y": 18.0,
+      "w": 3.0,
+      "h": 6.0
+    },
+    {
+      "component": "obsSets",
+      "coordinationScopes": {
+        "dataset": "B"
+      },
+      "x": 0.0,
+      "y": 15.0,
+      "w": 3.0,
+      "h": 3.0
+    },
+    {
+      "component": "heatmap",
+      "coordinationScopes": {
+        "dataset": "B"
+      },
+      "x": 9.0,
+      "y": 12.0,
+      "w": 3.0,
+      "h": 3.0
     }
   ]
 };
+  
