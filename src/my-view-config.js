@@ -1,18 +1,15 @@
 export const myViewConfig = {
   "version": "1.0.15",
-  "name": "Cerebellar Nuclei Development in Mice",
-  "description": "Spatial transcriptomics map of the developing mouse cerebellum. Coronal section from SPART-seq data, E11-E17 timepoints, four anterior to posterior slices taken per timepoint.",
-  "datasets": [{
+  "name": "E11 Coronal",
+  "description": "",
+  "datasets": [
+    {
       "uid": "A",
       "name": "E11",
       "files": [
         {
           "fileType": "anndata.zarr",
-          "url":"https://kwoniris.github.io/mouse-cereb-dev/data/E11_Normalized.zarr",
-          "coordinationValues": {
-            "obsType":"cell",
-            "featureType":"gene"
-          },
+          "url": "https://kwoniris.github.io/mouse-cereb-dev/data/E11_Normalized.zarr",
           "options": {
             "obsLocations": {
               "path": "obsm/spatial"
@@ -20,13 +17,16 @@ export const myViewConfig = {
             "obsEmbedding": [
               {
                 "path": "obsm/X_umap",
-                "dims": [0,1],
-                "embeddingType": "UMAP (E11)" // can modify this title for UMAP plot
+                "dims": [
+                  0,
+                  1
+                ],
+                "embeddingType": "UMAP"
               }
             ],
             "obsSets": [
               {
-                "name": "Cell Types",
+                "name": "Cell Type",
                 "path": "obs/cell_types"
               },
               {
@@ -37,56 +37,6 @@ export const myViewConfig = {
                 "name": "Coronal Slice (Anterior to Posterior)",
                 "path": "obs/library_id"
               }
-              // {
-              //   "name": "Leiden Clusters",
-              //   "path": "obs/leiden"
-              // }
-            ],
-            "obsFeatureMatrix": {
-              "path": "X"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "uid": "B", 
-      "name": "E13",
-      "files": [
-        {
-          "fileType": "anndata.zarr",
-          "url":"https://kwoniris.github.io/mouse-cereb-dev/data/E13_Normalized.zarr",
-          "coordinationValues": {
-            "obsType":"cell"
-          },
-          "options": {
-            "obsLocations": {
-              "path": "obsm/spatial"
-            },
-            "obsEmbedding": [
-              {
-                "path": "obsm/X_umap",
-                "dims": [0, 1],
-                "embeddingType": "UMAP (E13)"
-              }
-            ],
-            "obsSets": [
-              {
-                "name": "Cell Types",
-                "path": "obs/broad_cell_types"
-              },
-              {
-                "name": "Finer Cell Types",
-                "path": "obs/cell_types"
-              },
-              {
-                "name": "Coronal Slice (Anterior to Posterior)",
-                "path": "obs/library_id"
-              }
-              // {
-              //   "name": "Leiden Clusters",
-              //   "path": "obs/leiden"
-              // }
             ],
             "obsFeatureMatrix": {
               "path": "X"
@@ -96,131 +46,21 @@ export const myViewConfig = {
       ]
     }
   ],
-  "initStrategy":"auto",
   "coordinationSpace": {
     "dataset": {
-      "A": "A",
-      "B":"B"
+      "A": "A"
     },
     "embeddingType": {
-      "A": "E11 UMAP",
-      "B": "E13 UMAP"
+      "A": "UMAP"
     },
     "spatialZoom": {
-      "A": 1.5,
-      "B": 2.5
+      "A": 0
     },
     "spatialTargetX": {
-      "A": 259,
-      "B": 500
+      "A": 259
     },
     "spatialTargetY": {
-      "A": 500,
-      "B": 48
-    },
-    "spatialImageLayer": {
-      "A": [
-        {
-          "type": "raster",
-          "index": 0,
-          "colormap": null,
-          "transparentColor": null,
-          "opacity": 1,
-          "domainType": "Min/Max",
-          "channels": [
-            {
-              "selection": { "c": 0 },
-              "color": [
-                255,
-                0,
-                0
-              ],
-              "visible": true,
-              "slider": [
-                0,
-                255
-              ]
-            },
-            {
-              "selection": { "c": 1 },
-              "color": [
-                0,
-                255,
-                0
-              ],
-              "visible": true,
-              "slider": [
-                0,
-                255
-              ]
-            },
-            {
-              "selection": { "c": 2 },
-              "color": [
-                0,
-                0,
-                255
-              ],
-              "visible": true,
-              "slider": [
-                0,
-                255
-              ]
-            }
-          ]
-        }
-      ],
-      "B":[
-        {
-          "type": "raster",
-          "index": 0,
-          "colormap": null,
-          "transparentColor": null,
-          "opacity": 1,
-          "domainType": "Min/Max",
-          "channels": [
-            {
-              "selection": { "c": 0 },
-              "color": [
-                255,
-                0,
-                0
-              ],
-              "visible": true,
-              "slider": [
-                0,
-                255
-              ]
-            },
-            {
-              "selection": { "c": 1 },
-              "color": [
-                0,
-                255,
-                0
-              ],
-              "visible": true,
-              "slider": [
-                0,
-                255
-              ]
-            },
-            {
-              "selection": { "c": 2 },
-              "color": [
-                0,
-                0,
-                255
-              ],
-              "visible": true,
-              "slider": [
-                0,
-                255
-              ]
-            }
-          ]
-        }
-      ]
+      "A": 500
     },
     "spatialSegmentationLayer": {
       "A": {
@@ -228,28 +68,29 @@ export const myViewConfig = {
         "radius": 2,
         "visible": true,
         "stroked": false
-      },
-      "B": {
-        "opacity": 1,
-        "radius": 2,
-        "visible": true,
-        "stroked": false
       }
+    },
+    "heatmapZoomX": {
+      "A": 0
+    },
+    "heatmapZoomY": {
+      "A": 0
     }
   },
   "layout": [
-     // Shared views Add commentMore actions
-     {
-      "component": "description", 
+    {
+      "component": "description",
+      "coordinationScopes": {
+        "dataset": "A"
+      },
       "x": 0.0,
       "y": 0.0,
       "w": 3.0,
-      "h": 3.0,
+      "h": 2.0,
       "props": {
-        "description": "Spatial transcriptomics map of the developing mouse cerebellum. Coronal section from SPART-seq data, E11-E17 timepoints, four anterior to posterior slices taken per timepoint."
+        "description": "Developing Mouse Cerebellum (E11) Coronal Slice"
       }
     },
-    // E11 Views 
     {
       "component": "spatial",
       "coordinationScopes": {
@@ -261,7 +102,7 @@ export const myViewConfig = {
       },
       "x": 3.0,
       "y": 0,
-      "w": 3.0,
+      "w": 5.0,
       "h": 12
     },
     {
@@ -270,9 +111,9 @@ export const myViewConfig = {
         "embeddingType": "A"
       },
       "x": 6.0,
-      "y": 0,
-      "w": 3.0,
-      "h": 12
+      "y": 7.0,
+      "w": 4.0,
+      "h": 5.0
     },
     {
       "component": "featureList",
@@ -290,76 +131,22 @@ export const myViewConfig = {
         "dataset": "A"
       },
       "x": 0.0,
-      "y": 3.0,
+      "y": 2.0,
       "w": 3.0,
-      "h": 3.0
+      "h": 4.0
     },
     {
       "component": "heatmap",
       "coordinationScopes": {
-        "dataset": "A"
-      },
-      "x": 9.0,
-      "y": 0,
-      "w": 3.0,
-      "h": 12
-    },
-    // E13 Views
-    {
-      "component": "spatial",
-      "coordinationScopes": {
-        "dataset": "B",
-        "spatialZoom": "B",
-        "spatialTargetX": "B",
-        "spatialTargetY": "B",
-        "spatialSegmentationLayer": "B"
-      },
-      "x": 3.0,
-      "y": 12.0,
-      "w": 3.0,
-      "h": 12
-    },
-    {
-      "component": "scatterplot",
-      "coordinationScopes": {
-        "embeddingType": "B"
+        "dataset": "A",
+        "heatmapZoomX": "A",
+        "heatmapZoomY": "A"
       },
       "x": 6.0,
-      "y": 12.0,
-      "w": 3.0,
-      "h": 12,
-      "coordinationScopesBy": {}
-    },
-    {
-      "component": "featureList",
-      "coordinationScopes": {
-        "dataset": "B"
-      },
-      "x": 0.0,
-      "y": 18.0,
-      "w": 3.0,
-      "h": 6.0
-    },
-    {
-      "component": "obsSets",
-      "coordinationScopes": {
-        "dataset": "B"
-      },
-      "x": 0.0,
-      "y": 15.0,
-      "w": 3.0,
-      "h": 3.0
-    },
-    {
-      "component": "heatmap",
-      "coordinationScopes": {
-        "dataset": "B"
-      },
-      "x": 9.0,
-      "y": 12.0,
-      "w": 3.0,
-      "h": 3.0
+      "y": 0.0,
+      "w": 4.0,
+      "h": 7.0
     }
-  ]
+  ],
+  "initStrategy": "auto"
 };
-  
