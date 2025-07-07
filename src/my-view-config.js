@@ -54,7 +54,7 @@ export const myViewConfig = {
       "A": "UMAP"
     },
     "spatialZoom": {
-      "A": 0
+      "A": -1
     },
     "spatialTargetX": {
       "A": 259
@@ -102,7 +102,7 @@ export const myViewConfig = {
       },
       "x": 3.0,
       "y": 0,
-      "w": 4.0,
+      "w": 5.0,
       "h": 12
     },
     {
@@ -110,7 +110,7 @@ export const myViewConfig = {
       "coordinationScopes": {
         "embeddingType": "A"
       },
-      "x": 7.0,
+      "x": 8.0,
       "y": 7.0,
       "w": 4.0,
       "h": 5.0
@@ -142,7 +142,7 @@ export const myViewConfig = {
         "heatmapZoomX": "A",
         "heatmapZoomY": "A"
       },
-      "x": 7.0,
+      "x": 8.0,
       "y": 0.0,
       "w": 4.0,
       "h": 7.0
