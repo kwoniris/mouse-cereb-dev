@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Vitessce } from 'vitessce';
 import { e11Config } from './e11-config';
 import { e13Config } from './e13-config';
