@@ -34,7 +34,7 @@ export const e13Config = {
                 "path": "obs/cell_types"
               },
               {
-                "name": "Coronal Slice (Anterior to Posterior",
+                "name": "Coronal Slice (Anterior to Posterior)",
                 "path": "obs/library_id"
               }
             ],
@@ -54,7 +54,7 @@ export const e13Config = {
       "A": "UMAP"
     },
     "spatialZoom": {
-      "A": -1
+      "A": 2
     },
     "spatialTargetX": {
       "A": 500
