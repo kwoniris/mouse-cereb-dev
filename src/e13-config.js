@@ -146,7 +146,7 @@ export const e13Config = {
       "x": 3.0,
       "y": 0.0,
       "w": 5.0,
-      "h": 5.0
+      "h": 6.0
     }
   ],
   "initStrategy": "auto"
