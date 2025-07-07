@@ -54,7 +54,7 @@ export const myViewConfig = {
       "A": "UMAP"
     },
     "spatialZoom": {
-      "A": -1
+      "A": 0
     },
     "spatialTargetX": {
       "A": 259
