@@ -110,10 +110,10 @@ export const e13Config = {
       "coordinationScopes": {
         "embeddingType": "A"
       },
-      "x": 7.0,
+      "x": 8.0,
       "y": 0.0,
       "w": 4.0,
-      "h": 4.0,
+      "h": 6.0,
       "coordinationScopesBy": {}
     },
     {
@@ -146,7 +146,7 @@ export const e13Config = {
       "x": 3.0,
       "y": 0.0,
       "w": 5.0,
-      "h": 4.0
+      "h": 5.0
     }
   ],
   "initStrategy": "auto"

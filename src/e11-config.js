@@ -54,7 +54,7 @@ export const e11Config = {
       "A": "UMAP"
     },
     "spatialZoom": {
-      "A": 0
+      "A": -1
     },
     "spatialTargetX": {
       "A": 259
