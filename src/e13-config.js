@@ -54,7 +54,7 @@ export const e13Config = {
       "A": "UMAP"
     },
     "spatialZoom": {
-      "A": 2
+      "A": 0.5
     },
     "spatialTargetX": {
       "A": 500
@@ -110,9 +110,9 @@ export const e13Config = {
       "coordinationScopes": {
         "embeddingType": "A"
       },
-      "x": 8.0,
+      "x": 9.0,
       "y": 0.0,
-      "w": 4.0,
+      "w": 3.0,
       "h": 6.0,
       "coordinationScopesBy": {}
     },
@@ -145,7 +145,7 @@ export const e13Config = {
       },
       "x": 3.0,
       "y": 0.0,
-      "w": 5.0,
+      "w": 6.0,
       "h": 6.0
     }
   ],
