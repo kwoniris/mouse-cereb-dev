@@ -13,6 +13,7 @@ from matplotlib import rcParams
 import matplotlib.pyplot as plt 
 import seaborn as sns 
 import argparse 
+import scipy 
 
 # Configure Scanpy logging and settings
 sc.logging.print_header() # Prints Scanpy version and system info to console 
@@ -37,7 +38,7 @@ sc.set_figure_params(facecolor="white", figsize=(8, 8))
 sc.settings.verbosity = 3
 
 
-print("All required packages loaded successfully!")
+print("All required packages loaded successfully!\n")
 
 
 
