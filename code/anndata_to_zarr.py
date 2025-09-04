@@ -6,16 +6,21 @@
 # Output: Processed spatial data (.zarr)
 #
 # Running the script:
-# General Command: python anndata_to_zarr.py {path to input data dir of .h5ad files} {path to output file dir}
-# Example Command: python /Users/iriskwon/Desktop/mouse-cereb-dev/mouse-cereb-dev/code/anndata_to_zarr.py \
-#                  /path/to/input_data /path/to/output_data
-# Iris Command: python /Users/iriskwon/Desktop/mouse-cereb-dev/mouse-cereb-dev/code/anndata_to_zarr.py \
-#                  /Users/iriskwon/Library/CloudStorage/OneDrive-SharedLibraries-JohnsHopkins/Manjari Anant - Iris/ \
-#                  /Users/iriskwon/Desktop/mouse-cereb-dev/mouse-cereb-dev/data
+# General Command: python anndata_to_zarr.py 
+# Example Command: python /Users/iriskwon/Desktop/mouse-cereb-dev/mouse-cereb-dev/code/anndata_to_zarr.py
 #########################################################################
 
 # Load all import statements required for the script
 from import_utils import *
+
+# Define input and output paths as strings
+input_path = "/data_for_vitessce" # dir containing input .h5ad files 
+output_path = "/res_for_vitessce" # dir for output .Zarr files 
+
+# Placeholder for processing logic
+# Add your data preprocessing, normalization, and export logic here
+print(f"Processing data from: {input_path}")
+print(f"Exporting processed data to: {output_path}")
 
 # Set up argument parser
 parser = argparse.ArgumentParser(description="Preprocess, normalize, and export spatial data for Vitessce.")
