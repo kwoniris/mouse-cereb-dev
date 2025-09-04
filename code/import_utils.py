@@ -12,6 +12,7 @@ import matplotlib as mpl
 from matplotlib import rcParams
 import matplotlib.pyplot as plt 
 import seaborn as sns 
+import argparse 
 
 from vitessce import (
     VitessceConfig,
@@ -30,9 +31,7 @@ sc.set_figure_params(facecolor="white", figsize=(8, 8))
 sc.settings.verbosity = 3
 
 
-def main():
-    print("All required packages loaded successfully!")
+print("All required packages loaded successfully!")
 
-if __name__ == "__main__":
-    main()
+
 
