@@ -1,49 +1,89 @@
 from import_utils import *
 
+# def scale_multiple_spatial_datasets(anndata_list, img_size=2000):
+#     """
+#     Scales spatial coordinates from a list of AnnData objects to fit within a defined image size.
+
+#     Parameters:
+#     - anndata_list: list of AnnData objects containing spatial coordinates in .obsm["spatial"]
+#     - img_size: size of the output canvas (default: 1000)
+
+#     Returns:
+#     - scaled_list: list of scaled spatial coordinate arrays
+#     """
+#     # Extract spatial coordinates from each AnnData object
+#     spatial_list = [adata.obsm["spatial"] for adata in anndata_list]
+
+#     # Concatenate all x and y coordinates
+#     all_x = np.concatenate([spatial[:, 0] for spatial in spatial_list])
+#     all_y = np.concatenate([spatial[:, 1] for spatial in spatial_list])
+
+#     # Compute global bounds
+#     global_x_min, global_x_max = all_x.min(), all_x.max()
+#     global_y_min, global_y_max = all_y.min(), all_y.max()
+
+#     # Determine the largest range for scaling
+#     global_x_range = global_x_max - global_x_min
+#     global_y_range = global_y_max - global_y_min
+#     global_max_range = max(global_x_range, global_y_range)
+
+#     # Compute scale factor
+#     scale = img_size / global_max_range
+
+#     # Add padding to center the data
+#     x_pad = (img_size - (global_x_range * scale)) / 2
+#     y_pad = (img_size - (global_y_range * scale)) / 2
+
+#     # Scale each spatial dataset
+#     scaled_list = []
+#     for spatial in spatial_list:
+#         x_scaled = (spatial[:, 0] - global_x_min) * scale + x_pad
+#         y_scaled = (spatial[:, 1] - global_y_min) * scale + y_pad
+#         scaled_spatial = np.vstack([x_scaled, y_scaled]).T
+#         scaled_list.append(scaled_spatial)
+
+#     return scaled_list
+
+
 def scale_multiple_spatial_datasets(anndata_list, img_size=2000):
     """
-    Scales spatial coordinates from a list of AnnData objects to fit within a defined image size.
+    Scales spatial coordinates for each AnnData object individually to fit within a defined image size.
 
     Parameters:
     - anndata_list: list of AnnData objects containing spatial coordinates in .obsm["spatial"]
-    - img_size: size of the output canvas (default: 1000)
+    - img_size: size of the output canvas (default: 2000)
 
     Returns:
     - scaled_list: list of scaled spatial coordinate arrays
     """
-    # Extract spatial coordinates from each AnnData object
-    spatial_list = [adata.obsm["spatial"] for adata in anndata_list]
-
-    # Concatenate all x and y coordinates
-    all_x = np.concatenate([spatial[:, 0] for spatial in spatial_list])
-    all_y = np.concatenate([spatial[:, 1] for spatial in spatial_list])
-
-    # Compute global bounds
-    global_x_min, global_x_max = all_x.min(), all_x.max()
-    global_y_min, global_y_max = all_y.min(), all_y.max()
-
-    # Determine the largest range for scaling
-    global_x_range = global_x_max - global_x_min
-    global_y_range = global_y_max - global_y_min
-    global_max_range = max(global_x_range, global_y_range)
-
-    # Compute scale factor
-    scale = img_size / global_max_range
-
-    # Add padding to center the data
-    x_pad = (img_size - (global_x_range * scale)) / 2
-    y_pad = (img_size - (global_y_range * scale)) / 2
-
-    # Scale each spatial dataset
     scaled_list = []
-    for spatial in spatial_list:
-        x_scaled = (spatial[:, 0] - global_x_min) * scale + x_pad
-        y_scaled = (spatial[:, 1] - global_y_min) * scale + y_pad
+
+    for adata in anndata_list:
+        # Get original spatial coordinates
+        spatial = adata.obsm["spatial"]
+        x = spatial[:, 0]
+        y = spatial[:, 1]
+
+        # Get min and max for x and y
+        x_min, x_max = x.min(), x.max()
+        y_min, y_max = y.min(), y.max()
+
+        # Determine aspect-ratio-preserving scaling
+        x_range = x_max - x_min
+        y_range = y_max - y_min
+        max_range = max(x_range, y_range)
+
+        # Scale both x and y to [0, img_size] while preserving relative position
+        x_scaled = (x - x_min) / max_range * img_size
+        y_scaled = (y - y_min) / max_range * img_size
+
+        # Combine scaled coordinates
         scaled_spatial = np.vstack([x_scaled, y_scaled]).T
+
+        # Append the scaled spatial coordinates to the list
         scaled_list.append(scaled_spatial)
 
     return scaled_list
-
 
 def update_scaled_spatial_data(original_datasets, scaled_spatials, dataset_names=None):
     """

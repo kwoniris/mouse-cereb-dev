@@ -57,15 +57,15 @@ export const e15ScaledConfig = {
         "A": -1
       },
       "spatialTargetX": {
-        "A": 476
+        "A": 1000
       },
       "spatialTargetY": {
-        "A": 542
+        "A": 88
       },
       "spatialSegmentationLayer": {
         "A": {
           "opacity": 1,
-          "radius": 0,
+          "radius": 1,
           "visible": true,
           "stroked": false
         }
