@@ -54,18 +54,18 @@ export const e13ScaledConfig = {
         "A": "UMAP"
       },
       "spatialZoom": {
-        "A": -1
+        "A": -0.5
       },
       "spatialTargetX": {
-        "A": 1000
+        "A": 5000
       },
       "spatialTargetY": {
-        "A": 96
+        "A": 500
       },
       "spatialSegmentationLayer": {
         "A": {
           "opacity": 1,
-          "radius": 1,
+          "radius": 0.8,
           "visible": true,
           "stroked": false
         }
