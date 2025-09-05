@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Vitessce } from 'vitessce';
 import { e11Config } from './e11-config';
 import { e13Config } from './e13-config';
+import { e11ScaledConfig } from './e11-scaled-config';
+
 
 export default function App() {
   const [viewConfig, setViewConfig] = useState(null);
