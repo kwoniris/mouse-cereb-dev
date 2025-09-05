@@ -4,7 +4,6 @@ import { e11Config } from './e11-config';
 import { e13Config } from './e13-config';
 import { e11ScaledConfig } from './e11-scaled-config';
 
-
 export default function App() {
   const [viewConfig, setViewConfig] = useState(null);
 
@@ -17,7 +16,9 @@ export default function App() {
       config = e11Config;
     } else if (configParam === 'e13') {
       config = e13Config;
-    } 
+    } else if (configParam === 'e11-scaled') {
+      config = e11ScaledConfig;
+    }
     setViewConfig(config);
   }, []);
 
@@ -34,4 +35,3 @@ export default function App() {
     </>
   );
 }
-
