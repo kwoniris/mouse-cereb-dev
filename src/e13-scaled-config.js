@@ -65,7 +65,7 @@ export const e13ScaledConfig = {
       "spatialSegmentationLayer": {
         "A": {
           "opacity": 1,
-          "radius": 5,
+          "radius": 0,
           "visible": true,
           "stroked": false
         }
