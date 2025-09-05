@@ -1,0 +1,157 @@
+{
+  "version": "1.0.15",
+  "name": "E11 Coronal",
+  "description": "",
+  "datasets": [
+    {
+      "uid": "A",
+      "name": "E11",
+      "files": [
+        {
+          "fileType": "anndata.zarr",
+          "url": "public/data//A/0/45ee253c-0ae5-4f22-a035-5dcfd717ae50.adata.zarr",
+          "options": {
+            "obsLocations": {
+              "path": "obsm/spatial"
+            },
+            "obsEmbedding": [
+              {
+                "path": "obsm/X_umap",
+                "dims": [
+                  0,
+                  1
+                ],
+                "embeddingType": "UMAP"
+              }
+            ],
+            "obsSets": [
+              {
+                "name": "Cell Type",
+                "path": "obs/cell_types"
+              },
+              {
+                "name": "Broad Cell Types",
+                "path": "obs/broad_cell_types"
+              },
+              {
+                "name": "Coronal Slice (Anterior to Posterior",
+                "path": "obs/library_id"
+              }
+            ],
+            "obsFeatureMatrix": {
+              "path": "X_hvg"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "coordinationSpace": {
+    "dataset": {
+      "A": "A"
+    },
+    "embeddingType": {
+      "A": "UMAP"
+    },
+    "spatialZoom": {
+      "A": 0
+    },
+    "spatialTargetX": {
+      "A": 286
+    },
+    "spatialTargetY": {
+      "A": 500
+    },
+    "spatialSegmentationLayer": {
+      "A": {
+        "opacity": 1,
+        "radius": 2,
+        "visible": true,
+        "stroked": false
+      }
+    },
+    "heatmapZoomX": {
+      "A": 0
+    },
+    "heatmapZoomY": {
+      "A": 0
+    }
+  },
+  "layout": [
+    {
+      "component": "description",
+      "coordinationScopes": {
+        "dataset": "A"
+      },
+      "x": 0.0,
+      "y": 0.0,
+      "w": 6.0,
+      "h": 6.0,
+      "props": {
+        "description": "Developing Mouse Cerebellum (E11) Coronal Slice",
+        "height": 0.2
+      }
+    },
+    {
+      "component": "spatial",
+      "coordinationScopes": {
+        "dataset": "A",
+        "spatialZoom": "A",
+        "spatialTargetX": "A",
+        "spatialTargetY": "A",
+        "spatialSegmentationLayer": "A"
+      },
+      "x": 9.0,
+      "y": 6.0,
+      "w": 3.0,
+      "h": 6.0
+    },
+    {
+      "component": "scatterplot",
+      "coordinationScopes": {
+        "embeddingType": "A"
+      },
+      "x": 9.0,
+      "y": 0.0,
+      "w": 3.0,
+      "h": 6.0,
+      "coordinationScopesBy": {}
+    },
+    {
+      "component": "featureList",
+      "coordinationScopes": {
+        "dataset": "A"
+      },
+      "x": 6.0,
+      "y": 6.0,
+      "w": 3.0,
+      "h": 6.0
+    },
+    {
+      "component": "obsSets",
+      "coordinationScopes": {
+        "dataset": "A"
+      },
+      "x": 0.0,
+      "y": 6.0,
+      "w": 6.0,
+      "h": 6.0,
+      "props": {
+        "height": 0.3
+      }
+    },
+    {
+      "component": "heatmap",
+      "coordinationScopes": {
+        "dataset": "A",
+        "heatmapZoomX": "A",
+        "heatmapZoomY": "A"
+      },
+      "x": 6.0,
+      "y": 0.0,
+      "w": 3.0,
+      "h": 6.0
+    }
+  ],
+  "initStrategy": "auto"
+}

@@ -83,38 +83,52 @@ df.to_csv(output_file, index=False)
 
 print(f"Spatial maxima exported to {output_file}.")
 
-## GET SIGNIFICANT DEGs OF EACH DATASET 
-updated_datasets_with_deg = perform_deg_analysis_on_list(updated_datasets, 
-                                                         top_n=50, groupby_column="broad_cell_types")
+# ## GET SIGNIFICANT DEGs OF EACH DATASET 
+# updated_datasets_with_deg = perform_deg_analysis_on_list(updated_datasets, 
+#                                                          top_n=50, groupby_column="broad_cell_types")
+# print("All DEGs computed!")
 
-print("All DEGs computed!")
+## GET TOP 100 HIGHLY VARIABLE GENES OF EACH DATASET + optimal gene ordering
+updated_datasets_with_hvg = perform_hvg_analysis_on_list(updated_datasets, 
+                                                         top_n = 50)
+
+print("All HVGs computed!")
 
 ### have to ask Manju what sort of param I should use for this part 
 #### broader cell types or cell types; 
 
 ### SANTIY CHECK W HEATMAP
-# Select one dataset (e.g., the first one)
-adata = updated_datasets_with_deg[0]
-print("Hi")
-# Check and plot the DEG matrix
-if "X_deg" in adata.obsm:
-    X_deg = adata.obsm["X_deg"]
+
+# Select the dataset (e.g., first one)
+adata = updated_datasets_with_hvg[0]
+
+# Check if HVG matrix exists
+if "X_hvg" in adata.obsm:
+    X_hvg = adata.obsm["X_hvg"]
+
+    # Retrieve gene names and group labels
+    hvg_genes = adata.var_names[:X_hvg.shape[1]]  # Adjust if gene names are stored separately
+    group_labels = adata.obs["broad_cell_types"].astype(str).values
+
+    # Create a DataFrame for labeling
+    hvg_expr_df = pd.DataFrame(X_hvg, columns=hvg_genes, index=group_labels)
+
+    # Plot and save heatmap
     plt.figure(figsize=(12, 8))
-    sns.heatmap(X_deg, cmap="viridis", xticklabels=False, yticklabels=False)
-    plt.title("DEG Heatmap")
-    plt.xlabel("DEG Genes")
-    plt.ylabel("Cells")
+    sns.heatmap(hvg_expr_df, cmap="viridis", xticklabels=False, yticklabels=False)
+    plt.title("HVG Heatmap with Gene and Group Labels")
+    plt.xlabel("HVG Genes")
+    plt.ylabel("Cell Groups")
     plt.tight_layout()
-    output_heatmap_path = os.path.join(output_path, "deg_heatmap_test.png")
-    plt.figure(figsize=(7, 6))  # Adjusted figsize
-    plt.savefig(output_heatmap_path, dpi=300)
-    print(f"Heatmap saved to {output_heatmap_path}")
+    plt.savefig(os.path.join(output_path, "hvg_heatmap.png"))
+    plt.close()
+
+    print("Heatmap exported to hvg_heatmap.png")
 else:
-    print("No DEG matrix found in .obsm['X_deg']")
+    print("No HVG matrix found in .obsm['X_hvg']")
+
 
 ## Generate .zarr files for each
-export_anndata_to_zarr(updated_datasets_with_deg, updated_names)
+export_anndata_to_zarr(updated_datasets_with_hvg, updated_names, output_dir = output_path)
 
-
-## Run Vitessce config 
-
+print("Ready for Vitessce Config!")
