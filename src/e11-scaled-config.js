@@ -65,7 +65,7 @@ export const e11ScaledConfig = {
     "spatialSegmentationLayer": {
       "A": {
         "opacity": 1,
-        "radius": 2,
+        "radius": 5,
         "visible": true,
         "stroked": false
       }
@@ -100,20 +100,20 @@ export const e11ScaledConfig = {
         "spatialTargetY": "A",
         "spatialSegmentationLayer": "A"
       },
-      "x": 3.0,
-      "y": 0.0,
-      "w": 5.0,
-      "h": 12.0
+      "x": 2.0,
+      "y": 6.0,
+      "w": 10.0,
+      "h": 6.0
     },
     {
       "component": "scatterplot",
       "coordinationScopes": {
         "embeddingType": "A"
       },
-      "x": 8.0,
-      "y": 7.0,
-      "w": 4.0,
-      "h": 5.0,
+      "x": 9.0,
+      "y": 0.0,
+      "w": 3.0,
+      "h": 6.0,
     },
     {
       "component": "featureList",
@@ -122,7 +122,7 @@ export const e11ScaledConfig = {
       },
       "x": 0.0,
       "y": 6.0,
-      "w": 3.0,
+      "w": 2.0,
       "h": 6.0
     },
     {
@@ -142,10 +142,10 @@ export const e11ScaledConfig = {
         "heatmapZoomX": "A",
         "heatmapZoomY": "A"
       },
-      "x": 8.0,
+      "x": 3.0,
       "y": 0.0,
-      "w": 4.0,
-      "h": 7.0
+      "w": 6.0,
+      "h": 6.0
     }
   ],
   "initStrategy": "auto"
