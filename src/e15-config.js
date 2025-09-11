@@ -67,6 +67,19 @@ export const e15Config = {
   },
   "layout": [
     {
+      "component": "description",
+      "coordinationScopes": {
+        "dataset": "A"
+      },
+      "x": 0,
+      "y": 0.0,
+      "w": 12,
+      "h": 1.0,
+      "props": {
+        "description": "Developing Mouse Cerebellum (E11) Coronal Slice"
+      }
+    },
+    {
       "component": "spatial",
       "coordinationScopes": {
         "dataset": "A",
@@ -76,18 +89,18 @@ export const e15Config = {
         "spatialSegmentationLayer": "A"
       },
       "x": 0,
-      "y": 0.0,
+      "y": 1.0,
       "w": 12,
-      "h": 6.0
+      "h": 5.0
     },
     {
       "component": "featureList",
       "coordinationScopes": {
         "dataset": "A"
       },
-      "x": 3.0,
+      "x": 2.0,
       "y": 6.0,
-      "w": 3.0,
+      "w": 2.0,
       "h": 6.0
     },
     {
@@ -97,7 +110,7 @@ export const e15Config = {
       },
       "x": 0.0,
       "y": 6.0,
-      "w": 3.0,
+      "w": 2.0,
       "h": 6.0
     },
     {
@@ -107,7 +120,7 @@ export const e15Config = {
         "heatmapZoomX": "A",
         "heatmapZoomY": "A"
       },
-      "x": 6.0,
+      "x": 4.0,
       "y": 6.0,
       "w": 6.0,
       "h": 6.0
