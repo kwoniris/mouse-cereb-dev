@@ -1,102 +1,74 @@
-// src/LandingPage.js
-import React from "react";
-import "./LandingPage.css";
+import React from 'react';
+import './LandingPage.css';
 
-function LandingPage() {
+const datasets = [
+  { name: 'E11 Dataset', config: 'e11', thumbnail: '/thumbnail/e11.png' },
+  { name: 'E13 Dataset', config: 'e13', thumbnail: '/thumbnail/e13.png' },
+  { name: 'E15 Dataset', config: 'e15', thumbnail: '/thumbnail/e15.png' },
+  { name: 'E17 Dataset', config: 'e17', thumbnail: '/thumbnail/e17.png' },
+];
+
+export default function LandingPage() {
+  const baseURL = 'https://kwoniris.github.io/mouse-cereb-dev/';
+
   return (
     <div>
-      {/* Navbar */}
       <nav className="navbar">
+        <a href="#abstract">Abstract</a>
         <a href="#about">About</a>
-        <a href="#apps">Apps</a>
-        <a href="#github">GitHub</a>
+        <a href="#tutorial">Tutorial</a>
+        <a href="#apps">Web Apps</a>
+        <a href="https://github.com/kwoniris/mouse-cereb-dev" target="_blank" rel="noreferrer">GitHub</a>
       </nav>
 
-      {/* Header */}
       <header className="page-header">
-        <h1>Embryonic Cerebellum Explorer</h1>
-        <h2>Interactive visualization of STARmap datasets</h2>
+        <h1>Mouse Cerebellum Development Explorer</h1>
+        <h2>Interactive spatial transcriptomics across embryonic stages</h2>
       </header>
 
-      {/* About Section */}
-      <section id="about" className="about">
-        <h2>About</h2>
-        <p>
-          This site provides interactive exploration of STARmap transcriptomics
-          datasets across embryonic development stages.
-        </p>
+      <section id="abstract" className="abstract-authors">
+        <h2>Abstract</h2>
+        <p>Explore cerebellar development using spatial transcriptomics datasets from E11 to E17.</p>
       </section>
 
-      {/* Apps Section */}
+      <section id="about" className="about">
+        <h2>About</h2>
+        <p>This project provides interactive visualizations of mouse cerebellum development.</p>
+      </section>
+
+      <section id="tutorial" className="tutorial">
+        <h2>Tutorial</h2>
+        <p>Click on a dataset below to explore the spatial transcriptomics data in Vitessce.</p>
+      </section>
+
       <section id="apps" className="apps">
-        <h2>Explore Datasets</h2>
+        <h2>Web Apps</h2>
         <div className="grid">
-          <a
-            href="/e11"
-            className="app-card"
-          >
-            <img
-              src={`${process.env.PUBLIC_URL}/thumbnail/e11.png`}
-              alt="E11 dataset"
-            />
-            <span>E11 Dataset</span>
-          </a>
-          <a
-            href="/e13"
-            className="app-card"
-          >
-            <img
-              src={`${process.env.PUBLIC_URL}/thumbnail/e13.png`}
-              alt="E13 dataset"
-            />
-            <span>E13 Dataset</span>
-          </a>
-          <a
-            href="/e15"
-            className="app-card"
-          >
-            <img
-              src={`${process.env.PUBLIC_URL}/thumbnail/e15.png`}
-              alt="E15 dataset"
-            />
-            <span>E15 Dataset</span>
-          </a>
-          <a
-            href="/e17"
-            className="app-card"
-          >
-            <img
-              src={`${process.env.PUBLIC_URL}/thumbnail/e17.png`}
-              alt="E17 dataset"
-            />
-            <span>E17 Dataset</span>
-          </a>
+          {datasets.map((ds) => (
+            <a
+              key={ds.config}
+              className="app-card"
+              href={`${baseURL}?config=${ds.config}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={ds.thumbnail} alt={ds.name} />
+              <span>{ds.name}</span>
+            </a>
+          ))}
         </div>
       </section>
 
-      {/* GitHub Section */}
-      <section id="github" className="github">
+      <section className="github">
         <h2>GitHub</h2>
-        <p>
-          View the source code and contribute to development on GitHub.
-        </p>
-        <a
-          href="https://github.com/your-repo"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          View on GitHub
+        <a href="https://github.com/kwoniris/mouse-cereb-dev" target="_blank" rel="noreferrer">
+          View Repository
         </a>
       </section>
 
-      {/* Footer */}
       <footer className="page-footer">
-        <p>
-          Built with ❤️ using React and Vitessce
-        </p>
+        <p>© 2025 Iris Kwon. All rights reserved.</p>
       </footer>
     </div>
   );
 }
-
-export default LandingPage;
