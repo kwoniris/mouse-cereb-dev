@@ -102,7 +102,7 @@ print("All HVGs computed!")
 # Select the dataset (e.g., first one)
 adata = updated_datasets_with_hvg[0]
 
-# Check if HVG matrix exists
+# Check if HVG matrix exists (optional)
 if "X_hvg" in adata.obsm:
     X_hvg = adata.obsm["X_hvg"]
 

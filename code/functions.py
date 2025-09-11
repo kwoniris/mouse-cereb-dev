@@ -1,89 +1,90 @@
 from import_utils import *
 
-# def scale_multiple_spatial_datasets(anndata_list, img_size=2000):
-#     """
-#     Scales spatial coordinates from a list of AnnData objects to fit within a defined image size.
-
-#     Parameters:
-#     - anndata_list: list of AnnData objects containing spatial coordinates in .obsm["spatial"]
-#     - img_size: size of the output canvas (default: 1000)
-
-#     Returns:
-#     - scaled_list: list of scaled spatial coordinate arrays
-#     """
-#     # Extract spatial coordinates from each AnnData object
-#     spatial_list = [adata.obsm["spatial"] for adata in anndata_list]
-
-#     # Concatenate all x and y coordinates
-#     all_x = np.concatenate([spatial[:, 0] for spatial in spatial_list])
-#     all_y = np.concatenate([spatial[:, 1] for spatial in spatial_list])
-
-#     # Compute global bounds
-#     global_x_min, global_x_max = all_x.min(), all_x.max()
-#     global_y_min, global_y_max = all_y.min(), all_y.max()
-
-#     # Determine the largest range for scaling
-#     global_x_range = global_x_max - global_x_min
-#     global_y_range = global_y_max - global_y_min
-#     global_max_range = max(global_x_range, global_y_range)
-
-#     # Compute scale factor
-#     scale = img_size / global_max_range
-
-#     # Add padding to center the data
-#     x_pad = (img_size - (global_x_range * scale)) / 2
-#     y_pad = (img_size - (global_y_range * scale)) / 2
-
-#     # Scale each spatial dataset
-#     scaled_list = []
-#     for spatial in spatial_list:
-#         x_scaled = (spatial[:, 0] - global_x_min) * scale + x_pad
-#         y_scaled = (spatial[:, 1] - global_y_min) * scale + y_pad
-#         scaled_spatial = np.vstack([x_scaled, y_scaled]).T
-#         scaled_list.append(scaled_spatial)
-
-#     return scaled_list
-
-
-def scale_multiple_spatial_datasets(anndata_list, img_size=2000):
+def scale_multiple_spatial_datasets(anndata_list, img_size=10000):
     """
-    Scales spatial coordinates for each AnnData object individually to fit within a defined image size.
+    Scales spatial coordinates from a list of AnnData objects to fit within a defined image size.
+    Scales multiple datasets consistently to fit within same global range. 
 
     Parameters:
     - anndata_list: list of AnnData objects containing spatial coordinates in .obsm["spatial"]
-    - img_size: size of the output canvas (default: 2000)
+    - img_size: size of the output canvas (default: 10000)
 
     Returns:
     - scaled_list: list of scaled spatial coordinate arrays
     """
+    # Extract spatial coordinates from each AnnData object
+    spatial_list = [adata.obsm["spatial"] for adata in anndata_list]
+
+    # Concatenate all x and y coordinates
+    all_x = np.concatenate([spatial[:, 0] for spatial in spatial_list])
+    all_y = np.concatenate([spatial[:, 1] for spatial in spatial_list])
+
+    # Compute global bounds
+    global_x_min, global_x_max = all_x.min(), all_x.max()
+    global_y_min, global_y_max = all_y.min(), all_y.max()
+
+    # Determine the largest range for scaling
+    global_x_range = global_x_max - global_x_min
+    global_y_range = global_y_max - global_y_min
+    global_max_range = max(global_x_range, global_y_range)
+
+    # Compute scale factor
+    scale = img_size / global_max_range
+
+    # Add padding to center the data
+    x_pad = (img_size - (global_x_range * scale)) / 2
+    y_pad = (img_size - (global_y_range * scale)) / 2
+
+    # Scale each spatial dataset
     scaled_list = []
-
-    for adata in anndata_list:
-        # Get original spatial coordinates
-        spatial = adata.obsm["spatial"]
-        x = spatial[:, 0]
-        y = spatial[:, 1]
-
-        # Get min and max for x and y
-        x_min, x_max = x.min(), x.max()
-        y_min, y_max = y.min(), y.max()
-
-        # Determine aspect-ratio-preserving scaling
-        x_range = x_max - x_min
-        y_range = y_max - y_min
-        max_range = max(x_range, y_range)
-
-        # Scale both x and y to [0, img_size] while preserving relative position
-        x_scaled = (x - x_min) / max_range * img_size
-        y_scaled = (y - y_min) / max_range * img_size
-
-        # Combine scaled coordinates
+    for spatial in spatial_list:
+        x_scaled = (spatial[:, 0] - global_x_min) * scale + x_pad
+        y_scaled = (spatial[:, 1] - global_y_min) * scale + y_pad
         scaled_spatial = np.vstack([x_scaled, y_scaled]).T
-
-        # Append the scaled spatial coordinates to the list
         scaled_list.append(scaled_spatial)
 
     return scaled_list
+
+
+# def scale_multiple_spatial_datasets(anndata_list, img_size=2000):
+#     """
+#     Scales spatial coordinates for each AnnData object individually to fit within a defined image size.
+
+#     Parameters:
+#     - anndata_list: list of AnnData objects containing spatial coordinates in .obsm["spatial"]
+#     - img_size: size of the output canvas (default: 2000)
+
+#     Returns:
+#     - scaled_list: list of scaled spatial coordinate arrays
+#     """
+#     scaled_list = []
+
+#     for adata in anndata_list:
+#         # Get original spatial coordinates
+#         spatial = adata.obsm["spatial"]
+#         x = spatial[:, 0]
+#         y = spatial[:, 1]
+
+#         # Get min and max for x and y
+#         x_min, x_max = x.min(), x.max()
+#         y_min, y_max = y.min(), y.max()
+
+#         # Determine aspect-ratio-preserving scaling
+#         x_range = x_max - x_min
+#         y_range = y_max - y_min
+#         max_range = max(x_range, y_range)
+
+#         # Scale both x and y to [0, img_size] while preserving relative position
+#         x_scaled = (x - x_min) / max_range * img_size
+#         y_scaled = (y - y_min) / max_range * img_size
+
+#         # Combine scaled coordinates
+#         scaled_spatial = np.vstack([x_scaled, y_scaled]).T
+
+#         # Append the scaled spatial coordinates to the list
+#         scaled_list.append(scaled_spatial)
+
+#     return scaled_list
 
 def update_scaled_spatial_data(original_datasets, scaled_spatials, dataset_names=None):
     """
@@ -117,68 +118,68 @@ def update_scaled_spatial_data(original_datasets, scaled_spatials, dataset_names
     return updated_datasets, updated_names
 
 
-# def perform_deg_analysis_on_list(datasets, groupby_column="broad_cell_types", pval_thresh=0.01, top_n=300, key="wilcoxon"):
-#     """
-#     Performs DEG analysis on a list of AnnData objects and stores the reordered top-N DEG expression matrix in .obsm['X_deg'].
+def perform_deg_analysis_on_list(datasets, groupby_column="broad_cell_types", pval_thresh=0.01, top_n=300, key="wilcoxon"):
+    """
+    Performs DEG analysis on a list of AnnData objects and stores the reordered top-N DEG expression matrix in .obsm['X_deg'].
 
-#     Parameters:
-#     - datasets: list of AnnData objects
-#     - groupby_column: column in .obs to group cells by (default: 'broad_cell_types')
-#     - pval_thresh: adjusted p-value threshold for significance
-#     - top_n: number of top DEGs to include (default: 300)
-#     - key: key under which DEG results are stored in .uns (default: 'wilcoxon')
+    Parameters:
+    - datasets: list of AnnData objects
+    - groupby_column: column in .obs to group cells by (default: 'broad_cell_types')
+    - pval_thresh: adjusted p-value threshold for significance
+    - top_n: number of top DEGs to include (default: 300)
+    - key: key under which DEG results are stored in .uns (default: 'wilcoxon')
 
-#     Returns:
-#     - updated_datasets: list of AnnData objects with .obsm['X_deg'] added
-#     """
-#     updated_datasets = []
+    Returns:
+    - updated_datasets: list of AnnData objects with .obsm['X_deg'] added
+    """
+    updated_datasets = []
 
-#     for adata in datasets:
-#         # Run DEG analysis
-#         sc.tl.rank_genes_groups(adata, groupby_column, method='wilcoxon', key_added=key)
+    for adata in datasets:
+        # Run DEG analysis
+        sc.tl.rank_genes_groups(adata, groupby_column, method='wilcoxon', key_added=key)
 
-#         # Collect DEGs for each group
-#         deg_dfs = []
-#         for group in adata.obs[groupby_column].cat.categories:
-#             df = sc.get.rank_genes_groups_df(adata, group=group, key=key)
-#             df['group'] = group
-#             deg_dfs.append(df)
+        # Collect DEGs for each group
+        deg_dfs = []
+        for group in adata.obs[groupby_column].cat.categories:
+            df = sc.get.rank_genes_groups_df(adata, group=group, key=key)
+            df['group'] = group
+            deg_dfs.append(df)
 
-#         # Combine and filter significant DEGs
-#         deg_all = pd.concat(deg_dfs, ignore_index=True)
-#         deg_sig = deg_all[deg_all['pvals_adj'] < pval_thresh]
-#         deg_sig = deg_sig.sort_values(['group', 'logfoldchanges'], ascending=[True, False])
+        # Combine and filter significant DEGs
+        deg_all = pd.concat(deg_dfs, ignore_index=True)
+        deg_sig = deg_all[deg_all['pvals_adj'] < pval_thresh]
+        deg_sig = deg_sig.sort_values(['group', 'logfoldchanges'], ascending=[True, False])
 
-#         print(f"{len(deg_sig)} significant DEGs found...")
-#         # Select top N unique DEGs
-#         deg_genes = deg_sig['names'].drop_duplicates().head(top_n).tolist()
+        print(f"{len(deg_sig)} significant DEGs found...")
+        # Select top N unique DEGs
+        deg_genes = deg_sig['names'].drop_duplicates().head(top_n).tolist()
 
-#         if len(deg_genes) == 0:
-#             print(f"No significant DEGs found for dataset. Skipping .obsm['X_deg'].")
-#             updated_datasets.append(adata)
-#             continue
+        if len(deg_genes) == 0:
+            print(f"No significant DEGs found for dataset. Skipping .obsm['X_deg'].")
+            updated_datasets.append(adata)
+            continue
 
-#         # Extract DEG expression matrix
-#         X_deg = adata[:, deg_genes].X
-#         if hasattr(X_deg, "toarray"):
-#             X_deg = X_deg.toarray()
+        # Extract DEG expression matrix
+        X_deg = adata[:, deg_genes].X
+        if hasattr(X_deg, "toarray"):
+            X_deg = X_deg.toarray()
 
-#         deg_expr_df = pd.DataFrame(X_deg, columns=deg_genes, index=adata.obs_names)
+        deg_expr_df = pd.DataFrame(X_deg, columns=deg_genes, index=adata.obs_names)
 
-#         # Hierarchical clustering to reorder genes
-#         Z = scipy.cluster.hierarchy.linkage(deg_expr_df.T, method="average", optimal_ordering=True)
-#         gene_ordering = scipy.cluster.hierarchy.leaves_list(Z)
-#         deg_expr_df = deg_expr_df.iloc[:, gene_ordering]
+        # Hierarchical clustering to reorder genes
+        Z = scipy.cluster.hierarchy.linkage(deg_expr_df.T, method="average", optimal_ordering=True)
+        gene_ordering = scipy.cluster.hierarchy.leaves_list(Z)
+        deg_expr_df = deg_expr_df.iloc[:, gene_ordering]
 
-#         # Store in .obsm
-#         adata.obsm["X_deg"] = deg_expr_df.values
+        # Store in .obsm
+        adata.obsm["X_deg"] = deg_expr_df.values
 
-#         # Optional: scale genes
-#         sc.pp.scale(adata)
+        # Optional: scale genes
+        sc.pp.scale(adata)
 
-#         updated_datasets.append(adata)
+        updated_datasets.append(adata)
 
-#     return updated_datasets
+    return updated_datasets
 
 def perform_hvg_analysis_on_list(datasets, top_n=300):
     """
