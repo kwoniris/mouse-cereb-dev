@@ -1,0 +1,258 @@
+/* Reset + Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom right, #eef3fa, #ffffff);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: #1c2a3a;
+    line-height: 1.6;
+    padding-top: 60px;
+  }
+  
+  /* Navbar */
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(10, 15, 44, 0.9);
+    color: white;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    backdrop-filter: blur(5px);
+  }
+  
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .navbar a:hover {
+    color: #f29cbe;
+  }
+  
+  /* Header */
+  .page-header {
+    background: linear-gradient(135deg, #102040, #2b4374);
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+  }
+  
+  .page-header h1 {
+    font-size: 2.4rem;
+  }
+  
+  .page-header h2 {
+    font-weight: normal;
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    opacity: 0.85;
+  }
+  
+  /* Sections */
+  section {
+    padding: 2rem 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+    scroll-margin-top: 100px;
+  }
+  
+  .abstract-authors,
+  .description,
+  .about,
+  .tutorial,
+  .apps,
+  .github {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 2px;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .abstract-authors {
+    margin-top: 2rem;
+  }
+  
+  /* Buttons */
+  .button {
+    display: inline-block;
+    background: #1a497f;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  
+  .button:hover {
+    background: #9e154c;
+  }
+  
+  .button:active {
+    font-size: 18px;
+    transition: font-size .1s ease-in-out;
+  }
+  
+  /* Video wrapper */
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  
+  /* Grid for apps */
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  /* App card */
+  .app-card {
+    width: 260px;
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .app-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .app-card:active {
+    border-style: solid;
+    border-width: medium;
+    border-color: #f29cbe;
+  }
+  
+  /* Thumbnail image */
+  .app-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 2px solid #ddd;
+    transition: transform 0.3s ease;
+  }
+  
+  .app-card:hover img {
+    transform: scale(1.05);
+  }
+  
+  /* Dataset label (always visible) */
+  .app-card span {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    background: #f7f9fc;
+    color: #1c2a3a;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1rem;
+  }
+  
+  /* Footer */
+  .page-footer {
+    background: #102040;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+    margin-top: 3rem;
+  }
+  
+  .page-footer a {
+    color: #66ccff;
+    text-decoration: none;
+  }
+  
+  .page-footer a:hover {
+    text-decoration: underline;
+    color: #f29cbe;
+  }
+  
+  .page-footer a:active {
+    text-decoration: none;
+    color: #f29cbe;
+  }
+  
+  /* GitHub section */
+  .github {
+    text-align: center;
+    font-size: 1rem;
+  }
+  
+  .github a {
+    display: inline-block;
+    margin-top: 1rem;
+    background: #1a497f;
+    color: white;
+    padding: 0.75rem 1.25rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .github a:hover {
+    background-color: #9e154c;
+  }
+  
+  .github a:active {
+    font-size: 18px;
+    transition: font-size .1s ease-in-out;
+  }
+  
+  /* Mobile */
+  @media (max-width: 600px) {
+    .navbar {
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-around;
+    }
+  
+    .app-card {
+      width: 100%;
+    }
+  
+    .app-card img {
+      height: 160px;
+      object-fit: contain;
+    }
+  }
+  
