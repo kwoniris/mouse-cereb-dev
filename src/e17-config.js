@@ -74,7 +74,7 @@ export const e17Config = {
       "x": 0,
       "y": 0.0,
       "w": 12,
-      "h": 1.0,
+      "h": 2.0,
       "props": {
         "description": "Developing Mouse Cerebellum (E11) Coronal Slice"
       }
@@ -89,7 +89,7 @@ export const e17Config = {
         "spatialSegmentationLayer": "A"
       },
       "x": 0,
-      "y": 1.0,
+      "y": 2.0,
       "w": 12,
       "h": 5.0
     },
@@ -99,9 +99,9 @@ export const e17Config = {
         "dataset": "A"
       },
       "x": 2.0,
-      "y": 6.0,
-      "w": 2.0,
-      "h": 6.0
+      "y": 7.0,
+      "w": 3.0,
+      "h": 5.0
     },
     {
       "component": "obsSets",
@@ -109,9 +109,9 @@ export const e17Config = {
         "dataset": "A"
       },
       "x": 0.0,
-      "y": 6.0,
+      "y": 7.0,
       "w": 2.0,
-      "h": 6.0
+      "h": 5.0
     },
     {
       "component": "heatmap",
@@ -120,10 +120,10 @@ export const e17Config = {
         "heatmapZoomX": "A",
         "heatmapZoomY": "A"
       },
-      "x": 4.0,
-      "y": 6.0,
-      "w": 6.0,
-      "h": 6.0
+      "x": 5.0,
+      "y": 7.0,
+      "w": 7.0,
+      "h": 5.0
     }
   ],
   "initStrategy": "auto"

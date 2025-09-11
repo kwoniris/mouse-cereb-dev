@@ -9,7 +9,7 @@ export const e11Config = {
       "files": [
         {
           "fileType": "anndata.zarr",
-          "url": "https://kwoniris.github.io/mouse-cereb-dev/data/e11_top10_deg.zarr",
+          "url": "https://kwoniris.github.io/mouse-cereb-dev/data/e13_top10_deg.zarr",
           "options": {
             "obsLocations": {
               "path": "obsm/spatial"
@@ -59,10 +59,10 @@ export const e11Config = {
       }
     },
     "heatmapZoomX": {
-      "A": 0
+      "A": 2
     },
     "heatmapZoomY": {
-      "A": 0
+      "A": 5
     }
   },
   "layout": [
@@ -72,9 +72,9 @@ export const e11Config = {
         "dataset": "A"
       },
       "x": 0,
-      "y": 6.0,
-      "w": 2,
-      "h": 6.0,
+      "y": 0.0,
+      "w": 12,
+      "h": 2.0,
       "props": {
         "description": "Developing Mouse Cerebellum (E11) Coronal Slice"
       }
@@ -89,29 +89,29 @@ export const e11Config = {
         "spatialSegmentationLayer": "A"
       },
       "x": 0,
-      "y": 0.0,
+      "y": 2.0,
       "w": 12,
-      "h": 6.0
+      "h": 5.0
     },
     {
       "component": "featureList",
       "coordinationScopes": {
         "dataset": "A"
       },
-      "x": 5,
-      "y": 6.0,
-      "w": 1.5,
-      "h": 6.0
+      "x": 2.0,
+      "y": 7.0,
+      "w": 3.0,
+      "h": 5.0
     },
     {
       "component": "obsSets",
       "coordinationScopes": {
         "dataset": "A"
       },
-      "x": 2.0,
-      "y": 6.0,
-      "w": 3.0,
-      "h": 6.0
+      "x": 0.0,
+      "y": 7.0,
+      "w": 2.0,
+      "h": 5.0
     },
     {
       "component": "heatmap",
@@ -120,10 +120,10 @@ export const e11Config = {
         "heatmapZoomX": "A",
         "heatmapZoomY": "A"
       },
-      "x": 6.5,
-      "y": 6.0,
-      "w": 5.5,
-      "h": 6.0
+      "x": 5.0,
+      "y": 7.0,
+      "w": 7.0,
+      "h": 5.0
     }
   ],
   "initStrategy": "auto"
