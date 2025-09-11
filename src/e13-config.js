@@ -9,7 +9,7 @@ export const e13Config = {
       "files": [
         {
           "fileType": "anndata.zarr",
-          "url": "configs_for_vitessce/A/0/05f59499-8d4a-4ae8-9856-31d171880ee7.adata.zarr",
+          "url": "https://kwoniris.github.io/mouse-cereb-dev/data/e13_top10_deg.zarr",
           "options": {
             "obsLocations": {
               "path": "obsm/spatial"
@@ -74,7 +74,7 @@ export const e13Config = {
       "x": 0,
       "y": 0.0,
       "w": 12,
-      "h": 3.0,
+      "h": 1.0,
       "props": {
         "description": "Developing Mouse Cerebellum (E13) Coronal Slice"
       }
@@ -89,18 +89,18 @@ export const e13Config = {
         "spatialSegmentationLayer": "A"
       },
       "x": 0,
-      "y": 3.0,
+      "y": 1.0,
       "w": 12,
-      "h": 3.0
+      "h": 5.0
     },
     {
       "component": "featureList",
       "coordinationScopes": {
         "dataset": "A"
       },
-      "x": 3.0,
+      "x": 2.0,
       "y": 6.0,
-      "w": 3.0,
+      "w": 2.0,
       "h": 6.0
     },
     {
@@ -110,7 +110,7 @@ export const e13Config = {
       },
       "x": 0.0,
       "y": 6.0,
-      "w": 3.0,
+      "w": 2.0,
       "h": 6.0
     },
     {
@@ -120,7 +120,7 @@ export const e13Config = {
         "heatmapZoomX": "A",
         "heatmapZoomY": "A"
       },
-      "x": 6.0,
+      "x": 4.0,
       "y": 6.0,
       "w": 6.0,
       "h": 6.0
