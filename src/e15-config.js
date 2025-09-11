@@ -1,15 +1,15 @@
-export const e11Config = {
+export const e15Config = {
   "version": "1.0.15",
   "name": "E11 Coronal",
   "description": "",
   "datasets": [
     {
       "uid": "A",
-      "name": "E11",
+      "name": "E15",
       "files": [
         {
           "fileType": "anndata.zarr",
-          "url": "configs_for_vitessce/A/0/093a6159-9d0f-460a-9188-02a8859eeae3.adata.zarr",
+          "url": "configs_for_vitessce/A/0/7cdb6ca7-87d3-4b39-b908-e02237dc9609.adata.zarr",
           "options": {
             "obsLocations": {
               "path": "obsm/spatial"
@@ -41,13 +41,13 @@ export const e11Config = {
       "A": "A"
     },
     "spatialZoom": {
-      "A": -3.2
+      "A": -3
     },
     "spatialTargetX": {
-      "A": 4874.0
+      "A": 5190
     },
     "spatialTargetY": {
-      "A": 266.0
+      "A": 468
     },
     "spatialSegmentationLayer": {
       "A": {
@@ -59,26 +59,13 @@ export const e11Config = {
       }
     },
     "heatmapZoomX": {
-      "A": 0
+      "A": 2
     },
     "heatmapZoomY": {
-      "A": 0
+      "A": 5
     }
   },
   "layout": [
-    {
-      "component": "description",
-      "coordinationScopes": {
-        "dataset": "A"
-      },
-      "x": 0,
-      "y": 0.0,
-      "w": 12,
-      "h": 2.0,
-      "props": {
-        "description": "Developing Mouse Cerebellum (E11) Coronal Slice"
-      }
-    },
     {
       "component": "spatial",
       "coordinationScopes": {
@@ -89,9 +76,9 @@ export const e11Config = {
         "spatialSegmentationLayer": "A"
       },
       "x": 0,
-      "y": 2.0,
+      "y": 0.0,
       "w": 12,
-      "h": 4.0
+      "h": 6.0
     },
     {
       "component": "featureList",
