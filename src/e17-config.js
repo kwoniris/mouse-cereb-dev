@@ -53,7 +53,7 @@ export const e17Config = {
       "A": {
         "shape": "circle",
         "opacity": 1,
-        "radius": 10,
+        "radius": 20,
         "visible": true,
         "stroked": false
       }
@@ -73,8 +73,8 @@ export const e17Config = {
       },
       "x": 0,
       "y": 0.0,
-      "w": 12,
-      "h": 2.0,
+      "w": 5,
+      "h": 7.0,
       "props": {
         "description": "Developing Mouse Cerebellum (E11) Coronal Slice"
       }
@@ -88,10 +88,10 @@ export const e17Config = {
         "spatialTargetY": "A",
         "spatialSegmentationLayer": "A"
       },
-      "x": 0,
-      "y": 2.0,
-      "w": 12,
-      "h": 5.0
+      "x": 5,
+      "y": 0.0,
+      "w": 7,
+      "h": 7.0
     },
     {
       "component": "featureList",
