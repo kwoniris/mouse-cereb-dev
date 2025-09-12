@@ -59,7 +59,7 @@ export const e17Config = {
       "A": {
         "shape": "circle",
         "opacity": 1,
-        "radius": 15,
+        "radius": 18,
         "visible": true,
         "stroked": false
       }

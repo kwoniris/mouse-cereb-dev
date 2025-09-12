@@ -53,7 +53,7 @@ export const e11Config = {
         "A": {
           "shape": "circle",
           "opacity": 1,
-          "radius": 5,
+          "radius": 9,
           "visible": true,
           "stroked": false
         }
