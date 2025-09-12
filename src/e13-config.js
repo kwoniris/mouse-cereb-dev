@@ -1,36 +1,41 @@
 export const e13Config = {
   "version": "1.0.15",
-  "name": "E11 Coronal",
+  "name": "E13 Coronal",
   "description": "",
   "datasets": [
     {
       "uid": "A",
-      "name": "E13",
+      "name": "E13 Full",
       "files": [
         {
           "fileType": "anndata.zarr",
-          "url": "https://kwoniris.github.io/mouse-cereb-dev/data/e13_top10_deg.zarr",
+          "url": "https://kwoniris.github.io/mouse-cereb-dev/data/e13_full.zarr",  // full dataset
           "options": {
-            "obsLocations": {
-              "path": "obsm/spatial"
-            },
+            "obsLocations": { "path": "obsm/spatial" },
             "obsSets": [
-              {
-                "name": "Cell Type",
-                "path": "obs/cell_types"
-              },
-              {
-                "name": "Broad Cell Types",
-                "path": "obs/broad_cell_types"
-              },
-              {
-                "name": "Coronal Slice (Anterior to Posterior",
-                "path": "obs/library_id"
-              }
+              { "name": "Cell Type", "path": "obs/cell_types" },
+              { "name": "Broad Cell Types", "path": "obs/broad_cell_types" },
+              { "name": "Coronal Slice (Anterior to Posterior)", "path": "obs/library_id" }
             ],
-            "obsFeatureMatrix": {
-              "path": "X"
-            }
+            "obsFeatureMatrix": { "path": "X" }
+          }
+        }
+      ]
+    },
+    {
+      "uid": "B",
+      "name": "E13 Top DEGs",
+      "files": [
+        {
+          "fileType": "anndata.zarr",
+          "url": "https://kwoniris.github.io/mouse-cereb-dev/data/e13_top10_deg.zarr",  // DEG subset
+          "options": {
+            "obsFeatureMatrix": { "path": "X" },
+            "obsSets": [
+              { "name": "Cell Type", "path": "obs/cell_types" },
+              { "name": "Broad Cell Types", "path": "obs/broad_cell_types" },
+              { "name": "Coronal Slice (Anterior to Posterior)", "path": "obs/library_id" }
+            ]
           }
         }
       ]
@@ -38,7 +43,8 @@ export const e13Config = {
   ],
   "coordinationSpace": {
     "dataset": {
-      "A": "A"
+      "full": "A",
+      "degs": "B"
     },
     "spatialZoom": {
       "A": -3
@@ -59,17 +65,17 @@ export const e13Config = {
       }
     },
     "heatmapZoomX": {
-      "A": 2
+      "B": 2
     },
     "heatmapZoomY": {
-      "A": 5
+      "B": 5
     }
   },
   "layout": [
     {
       "component": "description",
       "coordinationScopes": {
-        "dataset": "A"
+        "dataset": "full"
       },
       "x": 0,
       "y": 0.0,
@@ -82,7 +88,7 @@ export const e13Config = {
     {
       "component": "spatial",
       "coordinationScopes": {
-        "dataset": "A",
+        "dataset": "full",
         "spatialZoom": "A",
         "spatialTargetX": "A",
         "spatialTargetY": "A",
@@ -96,29 +102,30 @@ export const e13Config = {
     {
       "component": "featureList",
       "coordinationScopes": {
-        "dataset": "A"
+        "dataset": "full"
       },
-      "x": 2.0,
-      "y": 7.0,
-      "w": 3.0,
-      "h": 5.0
-    },
-    {
-      "component": "obsSets",
-      "coordinationScopes": {
-        "dataset": "A"
-      },
-      "x": 0.0,
+      "x": 3.0,
       "y": 7.0,
       "w": 2.0,
       "h": 5.0
     },
     {
+      "component": "obsSets",
+      "coordinationScopes": {
+        "dataset": "full"
+      },
+      "x": 0.0,
+      "y": 7.0,
+      "w": 3.0,
+      "h": 5.0
+    },
+    {
       "component": "heatmap",
       "coordinationScopes": {
-        "dataset": "A",
-        "heatmapZoomX": "A",
-        "heatmapZoomY": "A"
+        "dataset": "degs",
+        "obsSets": "degs",
+        "heatmapZoomX": "B",
+        "heatmapZoomY": "B"
       },
       "x": 5.0,
       "y": 7.0,

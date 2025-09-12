@@ -5,32 +5,37 @@ export const e17Config = {
   "datasets": [
     {
       "uid": "A",
-      "name": "E17",
+      "name": "E17 Full",
       "files": [
         {
           "fileType": "anndata.zarr",
-          "url": "https://kwoniris.github.io/mouse-cereb-dev/data/e17_top10_deg.zarr",
+          "url": "https://kwoniris.github.io/mouse-cereb-dev/data/e17_full.zarr",  // full dataset
           "options": {
-            "obsLocations": {
-              "path": "obsm/spatial"
-            },
+            "obsLocations": { "path": "obsm/spatial" },
             "obsSets": [
-              {
-                "name": "Cell Type",
-                "path": "obs/cell_types"
-              },
-              {
-                "name": "Broad Cell Types",
-                "path": "obs/broad_cell_types"
-              },
-              {
-                "name": "Coronal Slice (Anterior to Posterior",
-                "path": "obs/library_id"
-              }
+              { "name": "Cell Type", "path": "obs/cell_types" },
+              { "name": "Broad Cell Types", "path": "obs/broad_cell_types" },
+              { "name": "Coronal Slice (Anterior to Posterior)", "path": "obs/library_id" }
             ],
-            "obsFeatureMatrix": {
-              "path": "X"
-            }
+            "obsFeatureMatrix": { "path": "X" }
+          }
+        }
+      ]
+    },
+    {
+      "uid": "B",
+      "name": "E17 Top DEGs",
+      "files": [
+        {
+          "fileType": "anndata.zarr",
+          "url": "https://kwoniris.github.io/mouse-cereb-dev/data/e17_top10_deg.zarr",  // DEG subset
+          "options": {
+            "obsFeatureMatrix": { "path": "X" },
+            "obsSets": [
+              { "name": "Cell Type", "path": "obs/cell_types" },
+              { "name": "Broad Cell Types", "path": "obs/broad_cell_types" },
+              { "name": "Coronal Slice (Anterior to Posterior)", "path": "obs/library_id" }
+            ]
           }
         }
       ]
@@ -38,7 +43,8 @@ export const e17Config = {
   ],
   "coordinationSpace": {
     "dataset": {
-      "A": "A"
+      "full": "A",
+      "degs": "B"
     },
     "spatialZoom": {
       "A": -4.5
@@ -59,71 +65,49 @@ export const e17Config = {
       }
     },
     "heatmapZoomX": {
-      "A": 2
+      "B": 2
     },
     "heatmapZoomY": {
-      "A": 5
+      "B": 5
     }
   },
   "layout": [
     {
       "component": "description",
-      "coordinationScopes": {
-        "dataset": "A"
-      },
-      "x": 0,
-      "y": 0.0,
-      "w": 3,
-      "h": 7.0,
-      "props": {
-        "description": "Developing Mouse Cerebellum (E11) Coronal Slice"
-      }
+      "coordinationScopes": { "dataset": "full" },
+      "x": 0, "y": 0.0, "w": 12, "h": 2.0,
+      "props": { "description": "Developing Mouse Cerebellum (E17) Coronal Slice" }
     },
     {
       "component": "spatial",
       "coordinationScopes": {
-        "dataset": "A",
+        "dataset": "full",
         "spatialZoom": "A",
         "spatialTargetX": "A",
         "spatialTargetY": "A",
         "spatialSegmentationLayer": "A"
       },
-      "x": 3,
-      "y": 0.0,
-      "w": 10,
-      "h": 7.0
+      "x": 0, "y": 2.0, "w": 12, "h": 5.0
     },
     {
       "component": "featureList",
-      "coordinationScopes": {
-        "dataset": "A"
-      },
-      "x": 2.0,
-      "y": 7.0,
-      "w": 3.0,
-      "h": 5.0
+      "coordinationScopes": { "dataset": "full" },
+      "x": 3.0, "y": 7.0, "w": 2.0, "h": 5.0
     },
     {
       "component": "obsSets",
-      "coordinationScopes": {
-        "dataset": "A"
-      },
-      "x": 0.0,
-      "y": 7.0,
-      "w": 2.0,
-      "h": 5.0
+      "coordinationScopes": { "dataset": "full" },
+      "x": 0.0, "y": 7.0, "w": 3.0, "h": 5.0
     },
     {
       "component": "heatmap",
       "coordinationScopes": {
-        "dataset": "A",
-        "heatmapZoomX": "A",
-        "heatmapZoomY": "A"
+        "dataset": "degs",
+        "obsSets": "degs",
+        "heatmapZoomX": "B",
+        "heatmapZoomY": "B"
       },
-      "x": 5.0,
-      "y": 7.0,
-      "w": 7.0,
-      "h": 5.0
+      "x": 5.0, "y": 7.0, "w": 7.0, "h": 5.0
     }
   ],
   "initStrategy": "auto"

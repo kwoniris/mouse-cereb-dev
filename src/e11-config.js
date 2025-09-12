@@ -82,12 +82,12 @@ export const e11Config = {
       {
         "component": "featureList",
         "coordinationScopes": { "dataset": "full" },
-        "x": 2.0, "y": 7.0, "w": 3.0, "h": 5.0
+        "x": 3.0, "y": 7.0, "w": 2.0, "h": 5.0
       },
       {
         "component": "obsSets",
         "coordinationScopes": { "dataset": "full" },
-        "x": 0.0, "y": 7.0, "w": 2.0, "h": 5.0
+        "x": 0.0, "y": 7.0, "w": 3.0, "h": 5.0
       },
       {
         "component": "heatmap",
