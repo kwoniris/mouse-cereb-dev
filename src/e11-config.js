@@ -30,7 +30,12 @@ export const e11Config = {
             "fileType": "anndata.zarr",
             "url": "https://kwoniris.github.io/mouse-cereb-dev/data/e11_top10_deg.zarr",  // DEG subset
             "options": {
-              "obsFeatureMatrix": { "path": "X" }
+              "obsFeatureMatrix": { "path": "X" },
+              "obsSets": [
+                { "name": "Cell Type", "path": "obs/cell_types" },
+                { "name": "Broad Cell Types", "path": "obs/broad_cell_types" },
+                { "name": "Coronal Slice (Anterior to Posterior)", "path": "obs/library_id" }
+              ]
             }
           }
         ]
