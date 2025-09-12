@@ -88,6 +88,7 @@ export const e11Config = {
         "component": "heatmap",
         "coordinationScopes": {
           "dataset": "degs",
+          "obsSets": "degs",
           "heatmapZoomX": "B",
           "heatmapZoomY": "B"
         },
