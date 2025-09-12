@@ -82,7 +82,7 @@ export const e11Config = {
       {
         "component": "featureList",
         "coordinationScopes": { "dataset": "full" },
-        "x": 3.0, "y": 7.0, "w": 2.0, "h": 5.0
+        "x": 3.0, "y": 7.0, "w": 3.0, "h": 5.0
       },
       {
         "component": "obsSets",
@@ -97,7 +97,7 @@ export const e11Config = {
           "heatmapZoomX": "B",
           "heatmapZoomY": "B"
         },
-        "x": 5.0, "y": 7.0, "w": 7.0, "h": 5.0
+        "x": 6.0, "y": 7.0, "w": 6.0, "h": 5.0
       }
     ],
     "initStrategy": "auto"

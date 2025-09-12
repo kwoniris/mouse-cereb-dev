@@ -106,7 +106,7 @@ export const e13Config = {
       },
       "x": 3.0,
       "y": 7.0,
-      "w": 2.0,
+      "w": 3.0,
       "h": 5.0
     },
     {
@@ -127,9 +127,9 @@ export const e13Config = {
         "heatmapZoomX": "B",
         "heatmapZoomY": "B"
       },
-      "x": 5.0,
+      "x": 6.0,
       "y": 7.0,
-      "w": 7.0,
+      "w": 6.0,
       "h": 5.0
     }
   ],
