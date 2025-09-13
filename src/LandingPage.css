@@ -66,7 +66,7 @@
     background: #F7FBFC;
     color: #393737;
     text-align: center;
-    padding: 3rem 1rem;
+    padding: 2rem 0.5rem;
   }
   
   .header-content {
@@ -82,8 +82,8 @@
   }
   
   .header-text h1 {
-    font-family: 'Raleway', sans-serif;
-    font-weight: 700;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
     font-size: 2.4rem;
     margin: 0;
   }
@@ -122,17 +122,17 @@
 
   /* Grid for apps */
   .grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns per row */
+    gap: 1.5rem; /* Space between items */
     margin-top: 1rem;
+    justify-content: center; /* Center the grid items */
   }
 
   /* App card */
   .app-card {
-    width: 260px;
-    border-radius: 10px;
+    width: 330px;
+    border-radius: 8px;
     overflow: hidden;
     text-decoration: none;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
@@ -150,7 +150,7 @@
 
   .app-card:active {
     border-style: solid;
-    border-width: medium;
+    border-width: 2px;
     border-color: #f29cbe;
   }
 
@@ -171,9 +171,9 @@
   .app-card span {
     display: block;
     width: 100%;
-    padding: 0.75rem;
-    background: #e6eef5;
-    color: #1c2a3a;
+    padding: 0.7rem;
+    background: #F1FCFD;
+    color: #212122;
     font-weight: bold;
     text-align: center;
     font-size: 1rem;
@@ -181,7 +181,7 @@
 
   /* Footer */
   .page-footer {
-    background: #D6E6F2;
+    background: #F1FCFD;
     color: 6C7A89;
     text-align: center;
     padding: 1rem 0.5rem;

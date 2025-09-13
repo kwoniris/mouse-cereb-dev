@@ -21,7 +21,7 @@ export default function LandingPage() {
           <a href="#abstract">Abstract</a>
           <a href="#about">About</a>
           <a href="#apps">Visualizations</a>
-          <a href="#tutorial">Tutorial</a>
+          {/* <a href="#tutorial">Tutorial</a> */}
         </div>
         <div className="navbar-right">
           <a
@@ -45,26 +45,8 @@ export default function LandingPage() {
         </div>
       </header>
 
-      {/* Abstract Section */}
-      <section id="abstract" className="abstract-authors">
-        <h2>Abstract</h2>
-        <p>Explore cerebellar development using spatial transcriptomics datasets from E11 to E17.</p>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="about">
-        <h2>About</h2>
-        <p>This project provides interactive visualizations of spatial transcriptomics data across embryonic stages.</p>
-      </section>
-
-      {/* Tutorial Section */}
-      <section id="tutorial" className="tutorial">
-        <h2>Tutorial</h2>
-        <p>Click on a dataset below to explore the spatial transcriptomics data in Vitessce.</p>
-      </section>
-
-      {/* Visualizations Section */}
-      <section id="apps" className="apps">
+        {/* Visualizations Section */}
+        <section id="apps" className="apps">
         <h2>Visualizations</h2>
         <div className="grid">
           {datasets.map((ds) => (
@@ -81,6 +63,24 @@ export default function LandingPage() {
           ))}
         </div>
       </section>
+
+      {/* Abstract Section */}
+      <section id="abstract" className="abstract-authors">
+        <h2>Abstract</h2>
+        <p>Explore cerebellar development using spatial transcriptomics datasets from E11 to E17.</p>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="about">
+        <h2>About</h2>
+        <p>This project provides interactive visualizations of spatial transcriptomics data across embryonic stages.</p>
+      </section>
+
+      {/* Tutorial Section */}
+      {/* <section id="tutorial" className="tutorial">
+        <h2>Tutorial</h2>
+        <p>Click on a dataset below to explore the spatial transcriptomics data in Vitessce.</p>
+      </section> */}
 
       {/* Footer */}
       <footer className="page-footer">
