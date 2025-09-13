@@ -36,9 +36,13 @@ export default function LandingPage() {
 
       {/* Header Section */}
       <header className="page-header">
-        <img src={siteLogo} alt="Website Logo" className="site-logo" />
-        <h1>Mouse Cerebellum Development Explorer</h1>
-        <h2>Interactive spatial transcriptomics across embryonic stages</h2>
+        <div className="header-content">
+            <img src={siteLogo} alt="Website Logo" className="site-logo" />
+            <div className="header-text">
+            <h1>Mouse Cerebellum Development Explorer</h1>
+            <h2>Interactive spatial transcriptomics across embryonic stages</h2>
+            </div>
+        </div>
       </header>
 
       {/* Abstract Section */}

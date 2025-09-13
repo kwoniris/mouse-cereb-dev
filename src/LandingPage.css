@@ -63,29 +63,36 @@
   
   /* Header */
   .page-header {
-    background: #D9EAFD;
-    color: #1c2a3a;
+    background: #F7FBFC;
+    color: #393737;
     text-align: center;
     padding: 3rem 1rem;
   }
   
-  .page-header img.site-logo {
-    width: 100px;
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem; /* Space between the logo and the text */
+  }
+  
+  .site-logo {
+    width: 512px; /* Adjust the size of the logo */
     height: auto;
-    margin-bottom: 1rem;
   }
   
-  .page-header h1 {
-    font-family: 'Raleway', sans-serif; /* Font for the title */
-    font-weight: 700; /* Bold weight for emphasis */
+  .header-text h1 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
     font-size: 2.4rem;
+    margin: 0;
   }
   
-  .page-header h2 {
-    font-family: 'Lato', sans-serif; /* Font for the description */
-    font-weight: 300; /* Light weight for description */
-    margin-top: 0.5rem;
+  .header-text h2 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
     font-size: 1.2rem;
+    margin-top: 0.5rem;
     opacity: 0.85;
   }
   
@@ -174,10 +181,10 @@
 
   /* Footer */
   .page-footer {
-    background: #102040;
-    color: white;
+    background: #D6E6F2;
+    color: 6C7A89;
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 1rem 0.5rem;
     font-size: 0.9rem;
     margin-top: 3rem;
     font-family: 'Lato', sans-serif; /* Use Lato for footer text */
