@@ -95,11 +95,35 @@
     margin-top: 0.5rem;
     opacity: 0.85;
   }
+
+  .about-header {
+    margin-top: 2rem; /* Add spacing between the header content and the about section */
+    padding: 1rem 2rem; /* Add padding for better spacing */
+    background: rgba(255, 255, 255, 0.9); /* Light background for contrast */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center; /* Center-align the text */
+  }
+  
+  .about-header h2 {
+    font-family: 'Raleway', sans-serif; /* Use Raleway for the title */
+    font-weight: 700; /* Bold weight for emphasis */
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .about-header p {
+    font-family: 'Lato', sans-serif; /* Use Lato for the description */
+    font-weight: 300; /* Light weight for the paragraph */
+    font-size: 1rem;
+    color: #393737; /* Dark gray for readability */
+    margin: 0;
+  }
   
   /* Sections */
   section {
-    padding: 2rem 1rem;
-    max-width: 900px;
+    padding: 3rem 2rem;
+    max-width: 1200px;
     margin: 0 auto;
     scroll-margin-top: 100px;
   }

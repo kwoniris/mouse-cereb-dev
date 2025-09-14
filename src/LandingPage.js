@@ -35,7 +35,7 @@ export default function LandingPage() {
       </nav>
 
       {/* Header Section */}
-      <header className="page-header">
+        <header className="page-header">
         <div className="header-content">
             <img src={siteLogo} alt="Website Logo" className="site-logo" />
             <div className="header-text">
@@ -43,7 +43,15 @@ export default function LandingPage() {
             <h2>Interactive spatial transcriptomics across embryonic stages</h2>
             </div>
         </div>
-      </header>
+        {/* About Section inside the header */}
+        <div className="about-header">
+            <h2>About</h2>
+            <p>
+            This project provides interactive visualizations of spatial transcriptomics
+            data across embryonic stages.
+            </p>
+        </div>
+        </header>
 
         {/* Visualizations Section */}
         <section id="apps" className="apps">
@@ -68,12 +76,6 @@ export default function LandingPage() {
       <section id="abstract" className="abstract-authors">
         <h2>Abstract</h2>
         <p>Explore cerebellar development using spatial transcriptomics datasets from E11 to E17.</p>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="about">
-        <h2>About</h2>
-        <p>This project provides interactive visualizations of spatial transcriptomics data across embryonic stages.</p>
       </section>
 
       {/* Tutorial Section */}
