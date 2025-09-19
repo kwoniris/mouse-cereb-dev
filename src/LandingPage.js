@@ -66,7 +66,7 @@ export default function LandingPage() {
             <strong>Authors:</strong> Manjari Anant, Iris Kwon, Justus Kebschull, Author 4, ...
           </p>
           {/* Change link below with final link to manuscript. Currently using Justus's 2020 paper. */}
-          <a href="https://www.science.org/doi/10.1126/science.abd5059" target="_blank" className="button">Read Manuscript</a>
+          <a href="https://www.science.org/doi/10.1126/science.abd5059" target="_blank" rel="noreferrer" className="button">Read Manuscript</a>
       </section>
 
 
