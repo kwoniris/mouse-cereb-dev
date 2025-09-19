@@ -9,7 +9,7 @@ export const e11Config = {
       "files": [
         {
           "fileType": "anndata.zarr",
-          "url": "https://kwoniris.github.io/mouse-cereb-dev/data/e11_top10_deg.zarr",
+          "url": "https://kwoniris.github.io/mouse-cereb-dev/data/e11_top10_deg.zarr", 
           "options": {
             "obsLocations": {
               "path": "obsm/spatial"

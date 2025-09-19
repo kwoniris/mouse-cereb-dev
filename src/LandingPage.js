@@ -4,10 +4,16 @@ import githubLogo from "./assets/github-logo.png"; // Replace with the actual pa
 import siteLogo from "./assets/site-logo.png"; // Replace with the actual path to the website logo
 
 const datasets = [
-  { name: "E11 Dataset", config: "e11", thumbnail: "/thumbnail/e11.png" },
-  { name: "E13 Dataset", config: "e13", thumbnail: "/thumbnail/e13.png" },
-  { name: "E15 Dataset", config: "e15", thumbnail: "/thumbnail/e15.png" },
-  { name: "E17 Dataset", config: "e17", thumbnail: "/thumbnail/e17.png" },
+  // All datasets for paper 
+  { name: "E11", config: "e11", thumbnail: "/thumbnail/e11.png" },
+  { name: "E12", config: "e12", thumbnail: "/thumbnail/e12.png" },
+  { name: "E13", config: "e13", thumbnail: "/thumbnail/e13.png" },
+  { name: "E14", config: "e14", thumbnail: "/thumbnail/e14.png" },
+  { name: "E15", config: "e15", thumbnail: "/thumbnail/e15.png" },
+  { name: "E17", config: "e17", thumbnail: "/thumbnail/e17.png" },
+  { name: "P0",  config: "p0",  thumbnail: "/thumbnail/p0.png" },
+  { name: "P4",  config: "p4",  thumbnail: "/thumbnail/p4.png" },
+  { name: "P56", config: "p56", thumbnail: "/thumbnail/p56.png" },
 ];
 
 export default function LandingPage() {
@@ -19,9 +25,8 @@ export default function LandingPage() {
       <nav className="navbar">
         <div className="navbar-left">
           <a href="#abstract">Abstract</a>
-          <a href="#about">About</a>
-          <a href="#apps">Visualizations</a>
-          {/* <a href="#tutorial">Tutorial</a> */}
+          <a href="#spatial">Spatial</a> {/* spatial visualizations with Vitessce */}
+          <a href="#singlecell">scRNAseq</a> {/* scRNAseq embeddings */}
         </div>
         <div className="navbar-right">
           <a
@@ -30,6 +35,13 @@ export default function LandingPage() {
             rel="noreferrer"
           >
             <img src={githubLogo} alt="GitHub" className="github-logo" />
+          </a>
+          <a
+            href="https://www.kebschull-lab.org/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Kebschull Lab 
           </a>
         </div>
       </nav>
@@ -40,53 +52,75 @@ export default function LandingPage() {
             <img src={siteLogo} alt="Website Logo" className="site-logo" />
             <div className="header-text">
             <h1>Mouse Cerebellum Development Explorer</h1>
-            <h2>Interactive spatial transcriptomics across embryonic stages</h2>
+            <h2>This app allows the exploration of cerebellar nuclei formation in the developing mouse cerebellum across E11 to P56 timepoints using spatial and single cell datasets. 
+            </h2>
             </div>
-        </div>
-        {/* About Section inside the header */}
-        <div className="about-header">
-            <h2>About</h2>
-            <p>
-            This project provides interactive visualizations of spatial transcriptomics
-            data across embryonic stages.
-            </p>
         </div>
         </header>
 
-        {/* Visualizations Section */}
-        <section id="apps" className="apps">
-        <h2>Visualizations</h2>
-        <div className="grid">
-          {datasets.map((ds) => (
-            <a
-              key={ds.config}
-              className="app-card"
-              href={`${baseURL}?config=${ds.config}`}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src={ds.thumbnail} alt={ds.name} />
-              <span>{ds.name}</span>
-            </a>
-          ))}
-        </div>
+        {/* Abstract Section */}
+        <section id="abstract" className="abstract">
+          <h2>Abstract</h2>
+          <p>TODO: Abstract for paper goes here.</p>
+          <p>
+            <strong>Authors:</strong> Manjari Anant, Iris Kwon, Justus Kebschull, Author 4, ...
+          </p>
+          {/* Change link below with final link to manuscript. Currently using Justus's 2020 paper. */}
+          <a href="https://www.science.org/doi/10.1126/science.abd5059" target="_blank" className="button">Read Manuscript</a>
       </section>
 
-      {/* Abstract Section */}
-      <section id="abstract" className="abstract-authors">
-        <h2>Abstract</h2>
-        <p>Explore cerebellar development using spatial transcriptomics datasets from E11 to E17.</p>
+
+        {/* Spatial Views Section */}
+        <section id="spatial" className="spatial">
+          <h2>Spatial Views</h2>
+          <div className="grid">
+            {datasets.map((ds) => (
+              <a
+                key={ds.config}
+                className="app-card"
+                href={`${baseURL}?config=${ds.config}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={ds.thumbnail} alt={ds.name} />
+                <span>{ds.name}</span>
+              </a>
+            ))}
+          </div>
+        </section>
+
+      {/* scRNAseq Embeddings Section */}
+      <section id="singlecell" className="singlecell">
+          <h2>scRNAseq Embeddings</h2>
+          TODO: UMAP views go here. 
       </section>
 
-      {/* Tutorial Section */}
-      {/* <section id="tutorial" className="tutorial">
-        <h2>Tutorial</h2>
-        <p>Click on a dataset below to explore the spatial transcriptomics data in Vitessce.</p>
-      </section> */}
+      {/* GitHub Section */}
+      <section id="github" className="github">
+        <h3>GitHub Repository</h3>
+        <p>View the source code, data, and tools used in this project.</p>
+        <a href="https://github.com/kwoniris/mouse-cereb-dev" target="_blank" rel="noopener noreferrer">
+          <i className="fab fa-github"></i> GitHub
+        </a>
+      </section>
+
+        <section className="github" id="github">
+        <h3>GitHub Repository</h3>
+        <p>View the source code, data, and tools used in this project.</p>
+        <a href="https://github.com/JEFworks-Lab/vitessce-cold-ischemia" target="_blank" rel="noopener noreferrer">
+          <i className="fab fa-github"></i> GitHub
+        </a>
+      </section>
 
       {/* Footer */}
       <footer className="page-footer">
-        <p>© 2025 Iris Kwon. All rights reserved.</p>
+        <p>&copy Kebschull-Lab 2025</p>
+        <p>
+          Web development by <a href="https://www.linkedin.com/in/iriskwon/">Iris Kwon</a>, using <a href="https://vitessce.io/">Vitessce</a>
+        </p>
+        <p>
+          All icons graphically designed by <a href="https://www.linkedin.com/in/iriskwon/">Iris Kwon</a>
+        </p>
       </footer>
     </div>
   );
