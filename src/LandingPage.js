@@ -8,12 +8,12 @@ const datasets = [
   { name: "E11", config: "e11", thumbnail: process.env.PUBLIC_URL + "/thumbnail/e11_finer_cell_types.png" },
   { name: "E12", config: "e12", thumbnail: process.env.PUBLIC_URL + "/thumbnail/e12_finer_cell_types.png" },
   { name: "E13", config: "e13", thumbnail: process.env.PUBLIC_URL + "/thumbnail/e13_finer_cell_types.png" },
-  { name: "E14", config: "e14", thumbnail: process.env.PUBLIC_URL + "/thumbnail/e14_cell_types.png" },
-  { name: "E15", config: "e15", thumbnail: process.env.PUBLIC_URL + "/thumbnail/e15.png" },
-  { name: "E17", config: "e17", thumbnail: process.env.PUBLIC_URL + "/thumbnail/e17.png" },
-  { name: "P0",  config: "p0",  thumbnail: process.env.PUBLIC_URL + "/thumbnail/p0.png" },
-  { name: "P4",  config: "p4",  thumbnail: process.env.PUBLIC_URL + "/thumbnail/p4.png" },
-  { name: "P56", config: "p56", thumbnail: process.env.PUBLIC_URL + "/thumbnail/p56.png" },
+  { name: "E14", config: "e14", thumbnail: process.env.PUBLIC_URL + "/thumbnail/e14_cell_types.png" }, // to do 
+  { name: "E15", config: "e15", thumbnail: process.env.PUBLIC_URL + "/thumbnail/e15.png" }, // to do 
+  { name: "E17", config: "e17", thumbnail: process.env.PUBLIC_URL + "/thumbnail/e17.png" }, // to do 
+  { name: "P0",  config: "p0",  thumbnail: process.env.PUBLIC_URL + "/thumbnail/p0_finer_cell_types.png" },
+  { name: "P4",  config: "p4",  thumbnail: process.env.PUBLIC_URL + "/thumbnail/p4_finer_cell_types.png" },
+  { name: "P56", config: "p56", thumbnail: process.env.PUBLIC_URL + "/thumbnail/p56.png" }, // to do 
 ];
 
 export default function LandingPage() {
@@ -28,7 +28,7 @@ export default function LandingPage() {
           <img src={brainLogo} alt="Brain Logo" className="navbar-logo" />
 
           <a href="#abstract">Abstract</a>
-          <a href="#spatial">Spatial</a> {/* spatial visualizations with Vitessce */}
+          <a href="#spatial">SPARTseq</a> {/* spatial visualizations with Vitessce */}
           <a href="#singlecell">scRNAseq</a> {/* scRNAseq embeddings */}
           <a
             href="https://www.kebschull-lab.org/"
@@ -75,7 +75,7 @@ export default function LandingPage() {
 
         {/* Spatial Views Section */}
         <section id="spatial" className="spatial">
-          <h2>Spatial Views</h2>
+          <h2>SPARTseq Embeddings</h2>
           <div className="grid">
             {datasets.map((ds) => (
               <a
