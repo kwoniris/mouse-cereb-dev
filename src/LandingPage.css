@@ -78,12 +78,18 @@ body {
   align-items: center;
   justify-content: flex-start;
   gap: 2rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .site-logo {
-  width: 400px;
+  width: 250px;
   height: auto;
+  flex-shrink: 0;
+}
+
+.header-text {
+  flex:1;
+  min-width:0;
 }
 
 .header-text h1 {
