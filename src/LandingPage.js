@@ -2,6 +2,7 @@ import React from "react";
 import "./LandingPage.css"; // Ensure this file contains the necessary styles
 import githubLogo from "./assets/github-logo.png"; // Replace with the actual path to the GitHub logo
 import siteLogo from "./assets/site-logo.png"; // Replace with the actual path to the website logo
+import brainLogo from "./assets/brain-logo.png"; 
 
 const datasets = [
   // All datasets for paper 
@@ -25,7 +26,7 @@ export default function LandingPage() {
       <nav className="navbar">
         <div className="navbar-left">
           {/* Top-left logo */}
-          <img src="/apple-touch-icon.png" alt="Brain Logo" className="navbar-logo" />
+          <img src={brainLogo} alt="Brain Logo" className="navbar-logo" />
 
           <a href="#abstract">Abstract</a>
           <a href="#spatial">Spatial</a> {/* spatial visualizations with Vitessce */}
