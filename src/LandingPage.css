@@ -76,13 +76,13 @@ body {
 .header-content {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
+  justify-content: flex-start;
+  gap: 2rem;
   flex-wrap: wrap;
 }
 
 .site-logo {
-  width: 510px;
+  width: 400px;
   height: auto;
 }
 
