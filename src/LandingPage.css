@@ -81,10 +81,6 @@ body {
   flex-wrap: wrap;
 }
 
-.header-text {
-  max-width: 600px;
-}
-
 .site-logo {
   width: 400px;
   height: auto;
@@ -229,7 +225,7 @@ section {
   display: block;
   width: 100%;
   padding: 0.7rem;
-  background: #EDDFE0;
+  background: #E1F2FB;
   color: #212122;
   font-weight: bold;
   text-align: center;
@@ -240,14 +236,14 @@ section {
    Footer
 ========================= */
 .page-footer {
-  background: #EDDFE0;
+  background: #E1F2FB;
   color: #212122;
   text-align: center;
   padding: 1rem 0.5rem;
   font-size: 1.0rem;
   margin-top: 3rem;
   font-family: 'Lato', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .page-footer a {
