@@ -1,0 +1,89 @@
+{
+    "chunks": [
+        1731
+    ],
+    "compressor": {
+        "blocksize": 0,
+        "clevel": 5,
+        "cname": "lz4",
+        "id": "blosc",
+        "shuffle": 1
+    },
+    "dtype": [
+        [
+            "CN1",
+            "<f8"
+        ],
+        [
+            "CN2",
+            "<f8"
+        ],
+        [
+            "CN3",
+            "<f8"
+        ],
+        [
+            "CN4",
+            "<f8"
+        ],
+        [
+            "CN5",
+            "<f8"
+        ],
+        [
+            "Inhib_prog",
+            "<f8"
+        ],
+        [
+            "Medial_VZ",
+            "<f8"
+        ],
+        [
+            "Mibrain",
+            "<f8"
+        ],
+        [
+            "Midbrain_prog",
+            "<f8"
+        ],
+        [
+            "Outside",
+            "<f8"
+        ],
+        [
+            "Outside Cb",
+            "<f8"
+        ],
+        [
+            "RL",
+            "<f8"
+        ],
+        [
+            "i1",
+            "<f8"
+        ],
+        [
+            "inhib1",
+            "<f8"
+        ],
+        [
+            "inhib2",
+            "<f8"
+        ],
+        [
+            "int_VZ",
+            "<f8"
+        ],
+        [
+            "lat_VZ",
+            "<f8"
+        ]
+    ],
+    "fill_value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+    "filters": null,
+    "order": "C",
+    "shape": [
+        1731
+    ],
+    "zarr_format": 2
+}

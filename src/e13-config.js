@@ -5,37 +5,36 @@ export const e13Config = {
   "datasets": [
     {
       "uid": "A",
-      "name": "E13 Full",
+      "name": "E13",
       "files": [
         {
           "fileType": "anndata.zarr",
-          "url": "https://kwoniris.github.io/mouse-cereb-dev/data/e13_full.zarr",  // full dataset
+          "url": "https://kwoniris.github.io/mouse-cereb-dev/data/e13_top10_degs.zarr",
           "options": {
-            "obsLocations": { "path": "obsm/spatial" },
+            "obsLocations": {
+              "path": "obsm/spatial"
+            },
             "obsSets": [
-              { "name": "Cell Type", "path": "obs/cell_types" },
-              { "name": "Broad Cell Types", "path": "obs/broad_cell_types" },
-              { "name": "Coronal Slice (Anterior to Posterior)", "path": "obs/library_id" }
+              {
+                "name": "Cell Types",
+                "path": "obs/cell_types"
+              },
+              {
+                "name": "Excitatory",
+                "path": "obs/excitatory"
+              },
+              {
+                "name": "Inhibitory",
+                "path": "obs/inhibitory"
+              },
+              {
+                "name": "Slice (Anterior to Posterior)",
+                "path": "obs/library_id"
+              }
             ],
-            "obsFeatureMatrix": { "path": "X" }
-          }
-        }
-      ]
-    },
-    {
-      "uid": "B",
-      "name": "E13 Top DEGs",
-      "files": [
-        {
-          "fileType": "anndata.zarr",
-          "url": "https://kwoniris.github.io/mouse-cereb-dev/data/e13_top10_deg.zarr",  // DEG subset
-          "options": {
-            "obsFeatureMatrix": { "path": "X" },
-            "obsSets": [
-              { "name": "Cell Type", "path": "obs/cell_types" },
-              { "name": "Broad Cell Types", "path": "obs/broad_cell_types" },
-              { "name": "Coronal Slice (Anterior to Posterior)", "path": "obs/library_id" }
-            ]
+            "obsFeatureMatrix": {
+              "path": "X"
+            }
           }
         }
       ]
@@ -43,17 +42,16 @@ export const e13Config = {
   ],
   "coordinationSpace": {
     "dataset": {
-      "full": "A",
-      "degs": "B"
+      "A": "A"
     },
     "spatialZoom": {
-      "A": -3
+      "A": -3.2
     },
     "spatialTargetX": {
-      "A": 5000
+      "A": 4942.0
     },
     "spatialTargetY": {
-      "A": 688
+      "A": 385.0
     },
     "spatialSegmentationLayer": {
       "A": {
@@ -65,30 +63,30 @@ export const e13Config = {
       }
     },
     "heatmapZoomX": {
-      "B": 2
+      "A": 1.5
     },
     "heatmapZoomY": {
-      "B": 5
+      "A": 1
     }
   },
   "layout": [
     {
       "component": "description",
       "coordinationScopes": {
-        "dataset": "full"
+        "dataset": "A"
       },
       "x": 0,
       "y": 0.0,
       "w": 12,
       "h": 2.0,
       "props": {
-        "description": "Developing Mouse Cerebellum (E13) Coronal Slice"
+        "description": "Developing Mouse Cerebellum Coronal Slice"
       }
     },
     {
       "component": "spatial",
       "coordinationScopes": {
-        "dataset": "full",
+        "dataset": "A",
         "spatialZoom": "A",
         "spatialTargetX": "A",
         "spatialTargetY": "A",
@@ -97,40 +95,39 @@ export const e13Config = {
       "x": 0,
       "y": 2.0,
       "w": 12,
-      "h": 5.0
+      "h": 4.0
     },
     {
       "component": "featureList",
       "coordinationScopes": {
-        "dataset": "full"
+        "dataset": "A"
       },
       "x": 3.0,
-      "y": 7.0,
+      "y": 6.0,
       "w": 3.0,
-      "h": 5.0
+      "h": 6.0
     },
     {
       "component": "obsSets",
       "coordinationScopes": {
-        "dataset": "full"
+        "dataset": "A"
       },
       "x": 0.0,
-      "y": 7.0,
+      "y": 6.0,
       "w": 3.0,
-      "h": 5.0
+      "h": 6.0
     },
     {
       "component": "heatmap",
       "coordinationScopes": {
-        "dataset": "degs",
-        "obsSets": "degs",
-        "heatmapZoomX": "B",
-        "heatmapZoomY": "B"
+        "dataset": "A",
+        "heatmapZoomX": "A",
+        "heatmapZoomY": "A"
       },
       "x": 6.0,
-      "y": 7.0,
+      "y": 6.0,
       "w": 6.0,
-      "h": 5.0
+      "h": 6.0
     }
   ],
   "initStrategy": "auto"

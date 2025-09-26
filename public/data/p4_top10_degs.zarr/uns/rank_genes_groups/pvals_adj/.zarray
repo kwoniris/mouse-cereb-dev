@@ -1,0 +1,101 @@
+{
+    "chunks": [
+        870
+    ],
+    "compressor": {
+        "blocksize": 0,
+        "clevel": 5,
+        "cname": "lz4",
+        "id": "blosc",
+        "shuffle": 1
+    },
+    "dtype": [
+        [
+            "Bergmann Glia",
+            "<f8"
+        ],
+        [
+            "DCN1",
+            "<f8"
+        ],
+        [
+            "DCN2",
+            "<f8"
+        ],
+        [
+            "DCN3",
+            "<f8"
+        ],
+        [
+            "DCN4",
+            "<f8"
+        ],
+        [
+            "DCN5",
+            "<f8"
+        ],
+        [
+            "DCN6",
+            "<f8"
+        ],
+        [
+            "DCN7",
+            "<f8"
+        ],
+        [
+            "DCN8",
+            "<f8"
+        ],
+        [
+            "DCN9",
+            "<f8"
+        ],
+        [
+            "DCN10",
+            "<f8"
+        ],
+        [
+            "DCN11",
+            "<f8"
+        ],
+        [
+            "Interneuron2",
+            "<f8"
+        ],
+        [
+            "Interneuron3",
+            "<f8"
+        ],
+        [
+            "Interneuron4",
+            "<f8"
+        ],
+        [
+            "Oligodendrocyte",
+            "<f8"
+        ],
+        [
+            "Outside_Cb",
+            "<f8"
+        ],
+        [
+            "Outside_DCN",
+            "<f8"
+        ],
+        [
+            "Purkinje",
+            "<f8"
+        ],
+        [
+            "i1",
+            "<f8"
+        ]
+    ],
+    "fill_value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+    "filters": null,
+    "order": "C",
+    "shape": [
+        1740
+    ],
+    "zarr_format": 2
+}

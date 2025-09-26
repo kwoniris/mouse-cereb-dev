@@ -1,0 +1,25 @@
+{
+    "_index": "_index",
+    "column-order": [
+        "cell_number",
+        "library_id",
+        "timepoint",
+        "batch",
+        "n_genes_by_counts",
+        "total_counts",
+        "n_counts",
+        "log1p_n_genes_by_counts",
+        "log1p_total_counts",
+        "pct_counts_in_top_50_genes",
+        "pct_counts_in_top_100_genes",
+        "pct_counts_in_top_200_genes",
+        "pct_counts_in_top_500_genes",
+        "hybrid_leiden",
+        "broad_cell_types",
+        "cell_types",
+        "excitatory",
+        "inhibitory"
+    ],
+    "encoding-type": "dataframe",
+    "encoding-version": "0.2.0"
+}
