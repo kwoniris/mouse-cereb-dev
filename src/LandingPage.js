@@ -6,10 +6,10 @@ import brainLogo from "./assets/brain-logo.png";
 
 const datasets = [
   // All datasets for paper 
-  { name: "E11", config: "e11", thumbnail: "/thumbnail/e11.png" },
-  { name: "E12", config: "e12", thumbnail: "/thumbnail/e12.png" },
-  { name: "E13", config: "e13", thumbnail: "/thumbnail/e13.png" },
-  { name: "E14", config: "e14", thumbnail: "/thumbnail/e14.png" },
+  { name: "E11", config: "e11", thumbnail: "/thumbnail/e11_finer_cell_types.png" },
+  { name: "E12", config: "e12", thumbnail: "/thumbnail/e12_finer_cell_types.png" },
+  { name: "E13", config: "e13", thumbnail: "/thumbnail/e13_finer_cell_types.png" },
+  { name: "E14", config: "e14", thumbnail: "/thumbnail/e14_cell_types.png" },
   { name: "E15", config: "e15", thumbnail: "/thumbnail/e15.png" },
   { name: "E17", config: "e17", thumbnail: "/thumbnail/e17.png" },
   { name: "P0",  config: "p0",  thumbnail: "/thumbnail/p0.png" },
