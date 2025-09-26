@@ -1,4 +1,6 @@
-/* Reset + Base */
+/* =========================
+   Reset + Base
+========================= */
 * {
   margin: 0;
   padding: 0;
@@ -14,10 +16,12 @@ body {
   background-position: center;
   color: #212122;
   line-height: 1.6;
-  padding-top: 60px;
+  padding-top: 60px; /* offset for fixed navbar */
 }
 
-/* Navbar */
+/* =========================
+   Navbar
+========================= */
 .navbar {
   position: fixed;
   top: 0;
@@ -33,7 +37,8 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-.navbar-left a {
+.navbar-left a,
+.navbar-right a {
   color: #1c2a3a;
   text-decoration: none;
   font-weight: 400;
@@ -42,15 +47,14 @@ body {
 }
 
 .navbar-left a:hover,
+.navbar-right a:hover,
 .navbar-left a.active {
   color: #f29cbe;
-  border-bottom: 2px solid #f29cbe;
 }
 
 .navbar-right {
   display: flex;
   align-items: center;
-  font-weight: 400;
 }
 
 .github-logo {
@@ -59,7 +63,9 @@ body {
   margin-left: 1rem;
 }
 
-/* Header */
+/* =========================
+   Header
+========================= */
 .page-header {
   background: #F8FBFD;
   color: #393737;
@@ -82,8 +88,8 @@ body {
 
 .header-text h1 {
   font-family: 'Quicksand', sans-serif;
-  font-weight: 500;
-  font-size: 2.5rem;
+  font-weight: 600;
+  font-size: 2.8rem;
 }
 
 .header-text h2 {
@@ -94,31 +100,47 @@ body {
   opacity: 0.85;
 }
 
-/* Sections */
+/* =========================
+   Sections
+========================= */
 section {
-  padding: 3rem 3rem; /* wider horizontal padding */
-  max-width: 1400px;  /* increased max width */
+  padding: 3rem 3rem;
+  max-width: 1200px;
   margin: 0 auto;
-  scroll-margin-top: 100px;
+  scroll-margin-top: 100px; /* avoids hiding under navbar */
 }
 
-.abstract {
+/* Shared card-like section styles */
+.abstract,
+.spatial,
+.singlecell,
+.github {
   background: rgba(255, 255, 255, 0.95);
   border-radius: 8px;
   margin: 2rem auto;
-  padding: 2rem 3rem; /* wider padding */
+  padding: 2rem 3rem;
   max-width: 1200px;
   text-align: center;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-.abstract h2 {
+/* Headings */
+.abstract h2, 
+.spatial h2, 
+.singlecell h2, 
+.github h3 {
   font-family: 'Raleway', sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 2rem;
   margin-bottom: 1rem;
 }
 
+.github h3 {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+/* Abstract body text */
 .abstract p {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
@@ -127,7 +149,6 @@ section {
   margin-bottom: 0.8rem;
 }
 
-/* Authors line (comma-separated inline) */
 .abstract-authors-line {
   font-weight: 400;
   font-size: 0.95rem;
@@ -135,7 +156,9 @@ section {
   margin-top: 0.5rem;
 }
 
-/* Button for manuscript links */
+/* =========================
+   Buttons
+========================= */
 .button {
   display: inline-block;
   margin-top: 1rem;
@@ -148,22 +171,15 @@ section {
   transition: background-color 0.3s, transform 0.2s;
 }
 
-.button:hover {
+.button:hover,
+.button:focus {
   background-color: #e578aa;
   transform: translateY(-2px);
 }
 
-/* Spatial and scRNAseq sections */
-.spatial, .singlecell {
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 8px;
-  margin-bottom: 2rem;
-  padding: 2rem 3rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  text-align: center;
-}
-
-/* Grid for apps */
+/* =========================
+   Grid + Cards
+========================= */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -172,7 +188,6 @@ section {
   margin-top: 1rem;
 }
 
-/* App card */
 .app-card {
   width: 330px;
   border-radius: 8px;
@@ -207,20 +222,22 @@ section {
   display: block;
   width: 100%;
   padding: 0.7rem;
-  background: #F1FCFD;
+  background: #D2E9E9;
   color: #212122;
   font-weight: bold;
   text-align: center;
   font-size: 1rem;
 }
 
-/* Footer */
+/* =========================
+   Footer
+========================= */
 .page-footer {
-  background: #F1FCFD;
-  color: #6C7A89;
+  background: #D2E9E9;
+  color: #212122;
   text-align: center;
   padding: 1rem 0.5rem;
-  font-size: 0.9rem;
+  font-size: 1.0rem;
   margin-top: 3rem;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
@@ -235,7 +252,9 @@ section {
   text-decoration: underline;
 }
 
-/* Mobile */
+/* =========================
+   Mobile
+========================= */
 @media (max-width: 600px) {
   .navbar {
     flex-wrap: wrap;

@@ -27,6 +27,13 @@ export default function LandingPage() {
           <a href="#abstract">Abstract</a>
           <a href="#spatial">Spatial</a> {/* spatial visualizations with Vitessce */}
           <a href="#singlecell">scRNAseq</a> {/* scRNAseq embeddings */}
+          <a
+            href="https://www.kebschull-lab.org/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Kebschull Lab 
+          </a>
         </div>
         <div className="navbar-right">
           <a
@@ -35,13 +42,6 @@ export default function LandingPage() {
             rel="noreferrer"
           >
             <img src={githubLogo} alt="GitHub" className="github-logo" />
-          </a>
-          <a
-            href="https://www.kebschull-lab.org/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Kebschull Lab 
           </a>
         </div>
       </nav>
@@ -103,18 +103,10 @@ export default function LandingPage() {
           <i className="fab fa-github"></i> GitHub
         </a>
       </section>
-
-        <section className="github" id="github">
-        <h3>GitHub Repository</h3>
-        <p>View the source code, data, and tools used in this project.</p>
-        <a href="https://github.com/JEFworks-Lab/vitessce-cold-ischemia" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-github"></i> GitHub
-        </a>
-      </section>
-
+      
       {/* Footer */}
       <footer className="page-footer">
-        <p>&copy Kebschull-Lab 2025</p>
+        <p>&copy; Kebschull-Lab 2025</p>
         <p>
           Web development by <a href="https://www.linkedin.com/in/iriskwon/">Iris Kwon</a>, using <a href="https://vitessce.io/">Vitessce</a>
         </p>
