@@ -5,7 +5,7 @@ export const p0Config = {
   "datasets": [
     {
       "uid": "A",
-      "name": "P01",
+      "name": "P0",
       "files": [
         {
           "fileType": "anndata.zarr",
