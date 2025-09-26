@@ -24,6 +24,10 @@ export default function LandingPage() {
       {/* Navbar */}
       <nav className="navbar">
         <div className="navbar-left">
+          {/* Top-left logo */}
+          <a href="#abstract">
+            <img src="/apple-touch-icon.png" alt="Brain Logo" className="navbar-logo" />
+          </a>
           <a href="#abstract">Abstract</a>
           <a href="#spatial">Spatial</a> {/* spatial visualizations with Vitessce */}
           <a href="#singlecell">scRNAseq</a> {/* scRNAseq embeddings */}

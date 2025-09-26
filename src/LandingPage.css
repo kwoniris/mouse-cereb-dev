@@ -37,6 +37,13 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+.navbar-logo {
+  width: 40px;
+  height: auto; 
+  margin-right: 1rem;
+  vertical-align: middle;
+}
+
 .navbar-left a,
 .navbar-right a {
   color: #1c2a3a;
