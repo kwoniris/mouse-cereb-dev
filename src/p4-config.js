@@ -45,7 +45,7 @@ export const p4Config = {
       "A": "A"
     },
     "spatialZoom": {
-      "A": -3.2
+      "A": -2.0
     },
     "spatialTargetX": {
       "A": 4511.0

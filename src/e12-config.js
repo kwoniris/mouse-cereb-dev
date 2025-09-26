@@ -49,7 +49,7 @@ export const e12Config = {
       "A": "A"
     },
     "spatialZoom": {
-      "A": -3.5
+      "A": -3.1
     },
     "spatialTargetX": {
       "A": 5642.0
