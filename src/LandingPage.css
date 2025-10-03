@@ -226,14 +226,16 @@ section {
 
 .app-card img {
   width: 100%;
-  height: 180px;
+  height: 200px;
   object-fit: cover;
+  object-position: center;
+  transform: scale(1.2);
   border-bottom: 1px solid #ddd;
   transition: transform 0.3s ease;
 }
 
 .app-card:hover img {
-  transform: scale(1.05);
+  transform: scale(1.15);
 }
 
 .app-card span {
@@ -254,8 +256,8 @@ section {
   background: rgba(255,255,255,0.95);
   border-radius: 8px;
   margin: 2rem auto;
-  padding: 2rem 2rem; /* slightly tighter padding */
-  max-width: 1200px;
+  padding: 2rem 3rem; /* match other sections */
+  max-width: 1300px;  /* match other sections */
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   font-family: 'Lato', sans-serif;
   color: #212122;
@@ -270,13 +272,13 @@ section {
 
 .data em {
   font-style: italic;
-  color: #b03b72; /* warning emphasis */
+  color: #b03b72;
 }
 
 .data table {
   width: 100%;
-  border-collapse: separate; /* modern spacing */
-  border-spacing: 0 0.5rem; /* vertical spacing between rows */
+  border-collapse: separate;
+  border-spacing: 0 0.5rem;
   margin-top: 1rem;
   font-size: 0.95rem;
   overflow-x: auto;
