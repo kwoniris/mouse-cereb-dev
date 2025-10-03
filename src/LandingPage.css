@@ -250,17 +250,18 @@ section {
 }
 
 /* =========================
-   Data Section – Modern Table
+   Data Section – Centered Table
 ========================= */
 .data {
   background: rgba(255,255,255,0.95);
   border-radius: 8px;
   margin: 2rem auto;
-  padding: 2rem 3rem; /* match other sections */
-  max-width: 1300px;  /* match other sections */
+  padding: 2rem 2rem;
+  max-width: 1200px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   font-family: 'Lato', sans-serif;
   color: #212122;
+  text-align: center; /* center everything inside */
 }
 
 .data p {
@@ -283,11 +284,14 @@ section {
   font-size: 0.95rem;
   overflow-x: auto;
   display: block;
+  text-align: center; /* center table text */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .data th, .data td {
   padding: 0.6rem 1rem;
-  text-align: left;
+  text-align: center; /* force columns to center */
 }
 
 .data th {
@@ -306,7 +310,7 @@ section {
   transition: background 0.3s;
 }
 
-/* Responsive: allow horizontal scroll on small screens */
+/* Responsive */
 @media (max-width: 600px) {
   .data table {
     display: block;
@@ -314,6 +318,7 @@ section {
     white-space: nowrap;
   }
 }
+
 
 
 /* =========================
