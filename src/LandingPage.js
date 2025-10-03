@@ -9,11 +9,11 @@ const datasets = [
   { name: "E12", config: "e12", thumbnail: process.env.PUBLIC_URL + "/thumbnail/e12_finer_cell_types.png" },
   { name: "E13", config: "e13", thumbnail: process.env.PUBLIC_URL + "/thumbnail/e13_finer_cell_types.png" },
   { name: "E14", config: "e14", thumbnail: process.env.PUBLIC_URL + "/thumbnail/e14_cell_types.png" }, // to do 
-  { name: "E15", config: "e15", thumbnail: process.env.PUBLIC_URL + "/thumbnail/e15.png" }, // to do 
-  { name: "E17", config: "e17", thumbnail: process.env.PUBLIC_URL + "/thumbnail/e17.png" }, // to do 
+  { name: "E15", config: "e15", thumbnail: process.env.PUBLIC_URL + "/thumbnail/e15_finer_cell_types.png" }, // to do 
+  { name: "E17", config: "e17", thumbnail: process.env.PUBLIC_URL + "/thumbnail/e17_cell_types.png" }, // to do 
   { name: "P0",  config: "p0",  thumbnail: process.env.PUBLIC_URL + "/thumbnail/p0_finer_cell_types.png" },
   { name: "P4",  config: "p4",  thumbnail: process.env.PUBLIC_URL + "/thumbnail/p4_finer_cell_types.png" },
-  { name: "P56", config: "p56", thumbnail: process.env.PUBLIC_URL + "/thumbnail/p56.png" }, // to do 
+  { name: "P56", config: "p56", thumbnail: process.env.PUBLIC_URL + "/thumbnail/p56_finer_cell_types.png" }, // to do 
 ];
 
 export default function LandingPage() {
