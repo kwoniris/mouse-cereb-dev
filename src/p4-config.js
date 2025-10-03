@@ -5,7 +5,7 @@ export const p4Config = {
   "datasets": [
     {
       "uid": "A",
-      "name": "P4",
+      "name": "E13",
       "files": [
         {
           "fileType": "anndata.zarr",
@@ -45,13 +45,13 @@ export const p4Config = {
       "A": "A"
     },
     "spatialZoom": {
-      "A": -2.0
+      "A": -3.3
     },
     "spatialTargetX": {
-      "A": 4511.0
+      "A": 4942.0
     },
     "spatialTargetY": {
-      "A": 233.0
+      "A": 385.0
     },
     "spatialSegmentationLayer": {
       "A": {
@@ -63,10 +63,10 @@ export const p4Config = {
       }
     },
     "heatmapZoomX": {
-      "A": 1.5
+      "A": 1
     },
     "heatmapZoomY": {
-      "A": 1
+      "A": 0.5
     }
   },
   "layout": [
