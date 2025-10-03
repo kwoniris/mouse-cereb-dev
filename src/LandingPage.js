@@ -5,15 +5,15 @@ import siteLogo from "./assets/site-logo.png"; // Replace with the actual path t
 import brainLogo from "./assets/brain-logo.png"; 
 
 const datasets = [
-  { name: "E11", config: "e11", thumbnail: process.env.PUBLIC_URL + "/thumbnail/e11_finer_cell_types.png" },
-  { name: "E12", config: "e12", thumbnail: process.env.PUBLIC_URL + "/thumbnail/e12_finer_cell_types.png" },
-  { name: "E13", config: "e13", thumbnail: process.env.PUBLIC_URL + "/thumbnail/e13_finer_cell_types.png" },
-  { name: "E14", config: "e14", thumbnail: process.env.PUBLIC_URL + "/thumbnail/e14_cell_types.png" }, // to do 
-  { name: "E15", config: "e15", thumbnail: process.env.PUBLIC_URL + "/thumbnail/e15_finer_cell_types.png" }, // to do 
-  { name: "E17", config: "e17", thumbnail: process.env.PUBLIC_URL + "/thumbnail/e17_cell_types.png" }, // to do 
-  { name: "P0",  config: "p0",  thumbnail: process.env.PUBLIC_URL + "/thumbnail/p0_finer_cell_types.png" },
-  { name: "P4",  config: "p4",  thumbnail: process.env.PUBLIC_URL + "/thumbnail/p4_finer_cell_types.png" },
-  { name: "P56", config: "p56", thumbnail: process.env.PUBLIC_URL + "/thumbnail/p56_finer_cell_types.png" }, // to do 
+  { name: "E11", config: "e11", thumbnail: process.env.PUBLIC_URL + "/thumbnail/e11.png" },
+  { name: "E12", config: "e12", thumbnail: process.env.PUBLIC_URL + "/thumbnail/e12.png" },
+  { name: "E13", config: "e13", thumbnail: process.env.PUBLIC_URL + "/thumbnail/e13.png" },
+  { name: "E14", config: "e14", thumbnail: process.env.PUBLIC_URL + "/thumbnail/e14.png" }, // to do 
+  { name: "E15", config: "e15", thumbnail: process.env.PUBLIC_URL + "/thumbnail/e15.png" }, // to do 
+  { name: "E17", config: "e17", thumbnail: process.env.PUBLIC_URL + "/thumbnail/e17.png" }, // to do 
+  { name: "P0",  config: "p0",  thumbnail: process.env.PUBLIC_URL + "/thumbnail/p0.png" },
+  { name: "P4",  config: "p4",  thumbnail: process.env.PUBLIC_URL + "/thumbnail/p4.png" },
+  { name: "P56", config: "p56", thumbnail: process.env.PUBLIC_URL + "/thumbnail/p56.png" }, // to do 
 ];
 
 export default function LandingPage() {
@@ -106,6 +106,31 @@ export default function LandingPage() {
           <i className="fab fa-github"></i> GitHub
         </a>
       </section>
+
+      {/* Data Section */}
+      <section id="data" className="data">
+        <h3>Data Availability</h3>
+        <p>Download raw SPARTseq and scRNAseq data used in this project.</p>
+        <p><em>Warning: These files are large and may take some time to download.</em></p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Size</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>example.rds</td>
+              <td>(2.0 GB)</td>
+              <td>Gene expression matrix (mouse).</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
       
       {/* Footer */}
       <footer className="page-footer">
