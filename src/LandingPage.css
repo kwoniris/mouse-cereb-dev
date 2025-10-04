@@ -230,7 +230,6 @@ section {
   height: 180px;
   object-fit: cover;
   object-position: center;
-  transform: scale(1.5); /* optional, if u wanna enlarge img */ 
   transition: transform 0.3s ease;
 }
 
