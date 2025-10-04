@@ -3,7 +3,6 @@ import "./LandingPage.css"; // Ensure this file contains the necessary styles
 import githubLogo from "./assets/github-logo.png"; // Replace with the actual path to the GitHub logo
 import siteLogo from "./assets/site-logo.png"; // Replace with the actual path to the website logo
 import brainLogo from "./assets/brain-logo.png"; 
-import SingleCellSection from "./components/SingleCellSection";
 
 const datasets = [
   { name: "E11", config: "e11", thumbnail: process.env.PUBLIC_URL + "/thumbnail/e11.png" },
@@ -16,6 +15,10 @@ const datasets = [
   { name: "P4",  config: "p4",  thumbnail: process.env.PUBLIC_URL + "/thumbnail/p4.png" },
   { name: "P56", config: "p56", thumbnail: process.env.PUBLIC_URL + "/thumbnail/p56.png" }, // to do 
 ];
+
+const sc_datasets = [
+  { name: "Developing Cerebellum", config: "cb_dev", thumbnail: process.env.PUBLIC_URL + "/thumbnail/cbDev_Annotated.png" },
+]
 
 export default function LandingPage() {
   const baseURL = "https://kwoniris.github.io/mouse-cereb-dev/";
@@ -94,11 +97,23 @@ export default function LandingPage() {
         </section>
 
       {/* scRNAseq Embeddings Section */}
-      {/* <section id="singlecell" className="singlecell">
+      <section id="singlecell" className="singlecell">
           <h2>scRNAseq Embeddings</h2>
-          TODO: UMAP views go here. 
-      </section> */}
-      <SingleCellSection />
+          <div className = "grid">
+          {sc_datasets.map((ds) => (
+              <a
+                key={ds.config}
+                className="app-card"
+                href={`${baseURL}?config=${ds.config}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={ds.thumbnail} alt={ds.name} />
+                <span>{ds.name}</span>
+              </a>
+            ))}
+          </div>
+      </section> 
 
       {/* GitHub Section */}
       <section id="github" className="github">
