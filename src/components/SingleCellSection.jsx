@@ -1,7 +1,7 @@
 // SingleCellSection.jsx
 import React, { useEffect, useRef } from "react";
 import { Vitessce } from "vitessce"; // note: named import
-import config from "../cb_dev-config"; // adjust path as needed
+import {config} from "../cb_dev-config"; // adjust path as needed
 
 const SingleCellSection = () => {
   const containerRef = useRef(null);
