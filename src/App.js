@@ -27,7 +27,7 @@ export default function App() {
       config = p0Config;
     } else if (configParam === 'p4') {
       config = p4Config;
-    } else if (configParam == 'cbDev') {
+    } else if (configParam === 'cbDev') {
       config = cbDevConfig;
     }
 
