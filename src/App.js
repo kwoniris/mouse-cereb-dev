@@ -5,7 +5,7 @@ import { e12Config } from './e12-config';
 import { e13Config } from './e13-config';
 import { p0Config } from './p0-config';
 import { p4Config } from './p4-config';
-import {cbDevConfig} from './cbDevConfig';
+import { cbDevConfig } from './cbDev-config';
 import LandingPage from './LandingPage';
 
 export default function App() {
