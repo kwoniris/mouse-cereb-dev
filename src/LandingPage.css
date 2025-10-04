@@ -208,6 +208,7 @@ section {
 .app-card {
   width: 100%;
   max-width: 400px;
+  border-bottom: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
   text-decoration: none;
@@ -229,8 +230,7 @@ section {
   height: 180px;
   object-fit: cover;
   object-position: center;
-  transform: scale(1.7); /* optional, if u wanna enlarge img */ 
-  border-bottom: 1px solid #ddd;
+  transform: scale(1.5); /* optional, if u wanna enlarge img */ 
   transition: transform 0.3s ease;
 }
 
@@ -253,7 +253,7 @@ section {
    Single Cell Card Overrides
 ========================= */
 .singlecell .app-card {
-  max-width: 600px; /* bigger than spatial cards */
+  max-width: 800px; /* bigger than spatial cards */
 }
 
 .singlecell .app-card img {
