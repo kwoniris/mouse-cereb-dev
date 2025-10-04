@@ -3,6 +3,7 @@ import "./LandingPage.css"; // Ensure this file contains the necessary styles
 import githubLogo from "./assets/github-logo.png"; // Replace with the actual path to the GitHub logo
 import siteLogo from "./assets/site-logo.png"; // Replace with the actual path to the website logo
 import brainLogo from "./assets/brain-logo.png"; 
+import SingleCellSection from "./components/SingleCellSection";
 
 const datasets = [
   { name: "E11", config: "e11", thumbnail: process.env.PUBLIC_URL + "/thumbnail/e11.png" },
@@ -93,10 +94,11 @@ export default function LandingPage() {
         </section>
 
       {/* scRNAseq Embeddings Section */}
-      <section id="singlecell" className="singlecell">
+      {/* <section id="singlecell" className="singlecell">
           <h2>scRNAseq Embeddings</h2>
           TODO: UMAP views go here. 
-      </section>
+      </section> */}
+      <SingleCellSection />
 
       {/* GitHub Section */}
       <section id="github" className="github">
