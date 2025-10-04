@@ -1,4 +1,4 @@
-export const cbDevConfig = {
+export const config = {
   "version": "1.0.15",
   "name": "Mouse Cerebellum Development",
   "description": "",
