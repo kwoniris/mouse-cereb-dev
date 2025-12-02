@@ -76,9 +76,9 @@ export const cbDevConfig = {
       "x": 0,
       "y": 0.0,
       "w": 12,
-      "h": 4.0,
+      "h": 3.0,
       "props": {
-        "description": "Developing Mouse Cerebellum Coronal Slice\n Combined all timepoints. November 2025 data."
+        "description": "Interactive exploration of snRNA-seq data of developing mouse cerebellum across all timepoints. November 2025 data."
       }
     },
     {
@@ -87,10 +87,10 @@ export const cbDevConfig = {
         "dataset": "A",
         "embeddingType": "A"
       },
-      "x": 5.0,
-      "y": 4.0,
-      "w": 7.0,
-      "h": 8.0
+      "x": 6.0,
+      "y": 3.0,
+      "w": 6.0,
+      "h": 9.0
     },
     {
       "component": "obsSets",
@@ -98,19 +98,19 @@ export const cbDevConfig = {
         "dataset": "A"
       },
       "x": 0.0,
-      "y": 4.0,
-      "w": 5.0,
-      "h": 3.0
+      "y": 3.0,
+      "w": 3.0,
+      "h": 9.0
     },
     {
       "component": "featureList",
       "coordinationScopes": {
         "dataset": "A"
       },
-      "x": 0.0,
-      "y": 7.0,
-      "w": 5.0,
-      "h": 3.0
+      "x": 3.0,
+      "y": 3.0,
+      "w": 3.0,
+      "h": 9.0
     }
   ],
   "initStrategy": "auto"
