@@ -17,7 +17,7 @@ const datasets = [
 ];
 
 const sc_datasets = [
-  { name: "Developing Cerebellum", config: "cbDev", thumbnail: process.env.PUBLIC_URL + "/thumbnail/cbDev_Annotated.png" },
+  { name: "Developing Cerebellum", config: "cbDevAll", thumbnail: process.env.PUBLIC_URL + "/thumbnail/cbDev_Annotated.png" },
 ]
 
 export default function LandingPage() {
