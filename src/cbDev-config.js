@@ -1,7 +1,7 @@
 export const cbDevConfig = {
   "version": "1.0.15",
   "name": "Mouse Cerebellum Development",
-  "description": "",
+  "description": "snRNAseq data (Nov 2025) of developing mouse cerebellum across all timepoints.",
   "datasets": [
     {
       "uid": "A",
@@ -9,7 +9,7 @@ export const cbDevConfig = {
       "files": [
         {
           "fileType": "anndata.zarr",
-          "url": "https://kwoniris.github.io/mouse-cereb-dev/data/cb_dev_annotated_v3.zarr",
+          "url": "https://kwoniris.github.io/mouse-cereb-dev/data/cb_dev_annotated.zarr",
           "options": {
             "obsEmbedding": [
               {
@@ -23,16 +23,32 @@ export const cbDevConfig = {
             ],
             "obsSets": [
               {
-                "name": "Cluster",
-                "path": "obs/cluster"
+                "name": "TimePoint",
+                "path": "obs/TimePoint"
               },
               {
-                "name": "Donor ID",
-                "path": "obs/donor_id"
+                "name": "Sample",
+                "path": "obs/Sample"
               },
               {
-                "name": "Sex",
-                "path": "obs/sex"
+                "name": "Fine Cell Type",
+                "path": "obs/fine_cell_type"
+              },
+              {
+                "name": "Cell Type",
+                "path": "obs/cell_type"
+              },
+              {
+                "name": "Vague Cell Type",
+                "path": "obs/cell_type_vague"
+              },
+              {
+                "name": "Final Clusters",
+                "path": "obs/final.clusters"
+              },
+              {
+                "name": "Subareas",
+                "path": "obs/subareas"
               }
             ],
             "obsFeatureMatrix": {
@@ -59,10 +75,10 @@ export const cbDevConfig = {
       },
       "x": 0,
       "y": 0.0,
-      "w": 3.0,
-      "h": 2.0,
+      "w": 12,
+      "h": 4.0,
       "props": {
-        "description": "Developing Mouse Cerebellum Single Cell Data"
+        "description": "Developing Mouse Cerebellum Coronal Slice\n Combined all timepoints. November 2025 data."
       }
     },
     {
@@ -71,10 +87,10 @@ export const cbDevConfig = {
         "dataset": "A",
         "embeddingType": "A"
       },
-      "x": 3.0,
-      "y": 0.0,
-      "w": 9.0,
-      "h": 12.0
+      "x": 5.0,
+      "y": 4.0,
+      "w": 7.0,
+      "h": 8.0
     },
     {
       "component": "obsSets",
@@ -82,9 +98,9 @@ export const cbDevConfig = {
         "dataset": "A"
       },
       "x": 0.0,
-      "y": 2.0,
-      "w": 3.0,
-      "h": 6.0
+      "y": 4.0,
+      "w": 5.0,
+      "h": 3.0
     },
     {
       "component": "featureList",
@@ -92,9 +108,9 @@ export const cbDevConfig = {
         "dataset": "A"
       },
       "x": 0.0,
-      "y": 8.0,
-      "w": 3.0,
-      "h": 4.0
+      "y": 7.0,
+      "w": 5.0,
+      "h": 3.0
     }
   ],
   "initStrategy": "auto"

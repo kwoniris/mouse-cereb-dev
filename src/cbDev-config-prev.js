@@ -1,4 +1,4 @@
-export const cbDevAllConfig = {
+export const cbDevConfig = {
   "version": "1.0.15",
   "name": "Mouse Cerebellum Development",
   "description": "",
@@ -9,7 +9,7 @@ export const cbDevAllConfig = {
       "files": [
         {
           "fileType": "anndata.zarr",
-          "url": "https://kwoniris.github.io/mouse-cereb-dev/data/cb_dev_annotated.zarr",
+          "url": "https://kwoniris.github.io/mouse-cereb-dev/data/cb_dev_annotated_v3.zarr",
           "options": {
             "obsEmbedding": [
               {
@@ -23,32 +23,16 @@ export const cbDevAllConfig = {
             ],
             "obsSets": [
               {
-                "name": "TimePoint",
-                "path": "obs/TimePoint"
+                "name": "Cluster",
+                "path": "obs/cluster"
               },
               {
-                "name": "Sample",
-                "path": "obs/Sample"
+                "name": "Donor ID",
+                "path": "obs/donor_id"
               },
               {
-                "name": "Fine Cell Type",
-                "path": "obs/fine_cell_type"
-              },
-              {
-                "name": "Cell Type",
-                "path": "obs/cell_type"
-              },
-              {
-                "name": "Vague Cell Type",
-                "path": "obs/cell_type_vague"
-              },
-              {
-                "name": "Final Clusters",
-                "path": "obs/final.clusters"
-              },
-              {
-                "name": "Subareas",
-                "path": "obs/subareas"
+                "name": "Sex",
+                "path": "obs/sex"
               }
             ],
             "obsFeatureMatrix": {
@@ -75,10 +59,10 @@ export const cbDevAllConfig = {
       },
       "x": 0,
       "y": 0.0,
-      "w": 12,
-      "h": 4.0,
+      "w": 3.0,
+      "h": 2.0,
       "props": {
-        "description": "Developing Mouse Cerebellum Coronal Slice\n Combined all timepoints. November 2025 data."
+        "description": "Developing Mouse Cerebellum Single Cell Data"
       }
     },
     {
@@ -87,10 +71,10 @@ export const cbDevAllConfig = {
         "dataset": "A",
         "embeddingType": "A"
       },
-      "x": 5.0,
-      "y": 4.0,
-      "w": 7.0,
-      "h": 8.0
+      "x": 3.0,
+      "y": 0.0,
+      "w": 9.0,
+      "h": 12.0
     },
     {
       "component": "obsSets",
@@ -98,9 +82,9 @@ export const cbDevAllConfig = {
         "dataset": "A"
       },
       "x": 0.0,
-      "y": 4.0,
-      "w": 5.0,
-      "h": 3.0
+      "y": 2.0,
+      "w": 3.0,
+      "h": 6.0
     },
     {
       "component": "featureList",
@@ -108,9 +92,9 @@ export const cbDevAllConfig = {
         "dataset": "A"
       },
       "x": 0.0,
-      "y": 7.0,
-      "w": 5.0,
-      "h": 3.0
+      "y": 8.0,
+      "w": 3.0,
+      "h": 4.0
     }
   ],
   "initStrategy": "auto"

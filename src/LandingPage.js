@@ -17,7 +17,7 @@ const datasets = [
 ];
 
 const sc_datasets = [
-  { name: "snRNAseq Data of the Developing Cerebellum, All Timepoints", config: "cbDevAll", thumbnail: process.env.PUBLIC_URL + "/thumbnail/cbDev_Annotated.png" },
+  { name: "snRNAseq Data of the Developing Cerebellum, All Timepoints", config: "cbDev", thumbnail: process.env.PUBLIC_URL + "/thumbnail/cbDev_Annotated.png" },
 ]
 
 export default function LandingPage() {
