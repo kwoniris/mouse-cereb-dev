@@ -9,7 +9,7 @@ export const cbDevAllConfig = {
       "files": [
         {
           "fileType": "anndata.zarr",
-          "url": "https://kwoniris.github.io/mouse-cereb-dev/data/cb_dev_all_tps-config.js",
+          "url": "https://kwoniris.github.io/mouse-cereb-dev/data/cb_dev_annotated.zarr",
           "options": {
             "obsEmbedding": [
               {

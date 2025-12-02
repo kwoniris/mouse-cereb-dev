@@ -17,7 +17,7 @@ const datasets = [
 ];
 
 const sc_datasets = [
-  { name: "Developing Cerebellum", config: "cbDevAll", thumbnail: process.env.PUBLIC_URL + "/thumbnail/cbDev_Annotated.png" },
+  { name: "snRNAseq Data of the Developing Cerebellum, All Timepoints", config: "cbDevAll", thumbnail: process.env.PUBLIC_URL + "/thumbnail/cbDev_Annotated.png" },
 ]
 
 export default function LandingPage() {
@@ -98,7 +98,7 @@ export default function LandingPage() {
 
       {/* scRNAseq Embeddings Section */}
       <section id="singlecell" className="singlecell">
-          <h2>scRNAseq Embeddings</h2>
+          <h2>snRNAseq Embeddings</h2>
           <div className = "grid">
           {sc_datasets.map((ds) => (
               <a
